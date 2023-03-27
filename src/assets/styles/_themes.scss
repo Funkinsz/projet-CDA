@@ -1,0 +1,43 @@
+.btn {
+    font-weight: 700;
+    padding: 5px 25px;
+    cursor: pointer;
+    transition: 0.2 opacity;
+    &:hover {
+        transition: 0.2s opacity;
+        opacity: 0.95;
+    }
+    &-primary {
+        border: 0px solid var(--neon-blue);
+        background-color: var(--dark-1) opacity;
+        color: var(--light-1);
+    }
+    &-primary-reverse {
+        background-color: var(--dark-1) opacity;
+        color: var(--light-1);
+        border: 0px solid var(--dark-1);
+    }
+}
+
+.divider {
+    height: 2px;
+    width: 0px;
+    transition: width 0.5s;
+    background-color: var(--neon-blue);
+    box-shadow: var(--neon-blue) 0px 1px 5px;  
+}
+
+.btn-box:hover {
+    &:hover {
+        .divider {
+            width: 100%;
+            background-color: var(--neon-blue);
+            box-shadow: var(--neon-blue) 0px 1px 5px;  
+        }
+    }
+}
+
+.card {
+    border-radius: 20px;
+    background-color: white;
+}

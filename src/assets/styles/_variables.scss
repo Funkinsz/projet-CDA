@@ -1,0 +1,52 @@
+:root {
+    --dark-1: rgb(13, 10, 13);
+    --dark-2: rgb(24, 15, 24);
+    --light-1: rgba(255, 245, 255, 0.85);
+    --light-2: rgb(255, 245, 255, 0.50);
+    --neon-blue: rgb(0,255,252);
+    --neon-pink: rgb(255,0,185);
+    --neon-gradient: linear-gradient(90deg, rgba(255,0,185,1) 0%, rgba(0,255,252,1) 100%);
+    --neon-graient-reverse: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(255,0,185,1) 100%);
+    --error: red;
+    --opacity-dark-1:rgba(13, 10, 13, 0.2); 
+    --opacity-dark-2:rgba(24, 15, 24, 0.2); 
+    --divider:#999;
+    --text-color: #f4f3f5;
+    --font-family: 'Nunito', sans-serif;
+    --box-shadow-gradient: 1px 1px #333;
+}
+
+
+.box:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-115deg, rgb(255,0,185) 0%, rgb(0,255,252) 100% );
+    // transform: translate3d(0px, 0px, 0) scale(0.99);
+    filter: blur(20px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+        

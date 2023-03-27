@@ -1,0 +1,58 @@
+.carousel {
+    height: 400px;
+    background-color: #111;
+}
+
+.dividertop {
+    width: 100%;
+    background-color: var(--red);
+    height: 1px;
+    box-shadow: var(--red) 15px 0 5px;
+}
+
+.dividerbot {
+    width: 100%;
+    background-color: var(--red);
+    height: 1px;
+    box-shadow: var(--red) -15px 0 5px;
+}
+
+.btnarrow{
+    height: 100%;
+    width: 125px;
+    // border: solid white 2px;
+    .blocarrow {
+        height: 24%;
+        width: 10px;
+        transform: rotate(45deg);
+        // border: solid yellow 2px;
+        position: absolute;
+        .baup {
+            position: relative;
+            height: 50%;
+            border: var(--red) 2px solid;
+            top: -87px;
+            left: -20px;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: var(--red);
+            box-shadow: var(--red) 0px 0px 15px,var(--red) 0px 0px 15px, var(--red) 0px 0px 15px, var(--red) 0px 0px 15px;
+
+        }
+        .badown {
+            position: relative;
+            height: 50%;
+            border: var(--red) 2px solid;
+            transform: rotate(90deg);
+            top: 76px;
+            left: 32px;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background-color: var(--red);
+        box-shadow: var(--red) 0px 0px 15px,var(--red) 0px 0px 15px, var(--red) 0px 0px 15px, var(--red) 0px 0px 15px;
+
+        }
+    }
+}
