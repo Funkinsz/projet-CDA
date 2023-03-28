@@ -23,6 +23,10 @@ img {
     max-width: 100%;
 }
 
+header {
+    background: linear-gradient(-115deg, rgba(255, 0, 185, 0.75) 0%, rgba(0, 255, 252, 0.75) 100% );
+}
+
 input {
     border-radius: 10px;
     border: 0;
@@ -54,4 +58,8 @@ input {
     input::placeholder {
         color: rgba(255, 245, 255, 0.25);
     }
+}
+
+footer {
+    background: linear-gradient(-115deg, rgba(255, 0, 185, 0.75) 0%, rgba(0, 255, 252, 0.75) 100% );
 }

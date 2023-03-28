@@ -2,8 +2,23 @@
     background-color: var(--dark-2);
 }
 
-.exemple-content {
+.exemplecontent {
+    border-radius: 5px;
+    box-shadow: var(--neon-blue) 0px -1px 1px;
     height: 500px;
-    width: 500px;
+    width: 85%;
     border: solid var(--neon-blue) 1px;
+    background-color: var(--dark-1);
+    color: var(--light-2);
+    .title {
+        justify-content: center;
+        border-bottom: 1px solid var(--neon-pink);
+    }
+}
+
+.divider {
+    width: 50%;
+    height: 1px;
+    background-color: var(--neon-pink);
+    box-shadow: var(--neon-pink) 0 1px 15px;
 }

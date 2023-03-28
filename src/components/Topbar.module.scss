@@ -1,0 +1,16 @@
+.topbar {
+    background: linear-gradient(-115deg, rgba(255, 0, 185, 0.75) 0%, rgba(0, 255, 252, 0.75) 100% );
+}
+
+.topbarbtn {
+    flex: 1;
+    height: 100px;
+    a {
+        text-decoration: none;
+        color: var(--light-1);
+    }
+    &.mid {
+        border-left: 1px dashed var(--neon-pink);
+        border-right: 1px dashed var(--neon-blue);
+    }
+}
