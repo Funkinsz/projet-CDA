@@ -1,16 +1,14 @@
-.content {
-    background-color: var(--dark-2);
+.groupecontent {
+    max-width: 1250px;
 }
 
 .exemplecontent {
     border-radius: 5px;
-    box-shadow: var(--neon-blue) 0px -1px 1px;
+    box-shadow: var(--neon-blue) 0px -1px 5px;
     height: 500px;
     width: 85%;
     border: solid var(--neon-blue) 1px;
-    background-color: var(--dark-1);
-    color: var(--light-2);
-    .title {
+    .titles {
         justify-content: center;
         border-bottom: 1px solid var(--neon-pink);
     }

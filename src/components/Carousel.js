@@ -1,20 +1,18 @@
 import styles from './Carousel.module.scss'
+import image from '../assets/image/affiche_concert.jpg'
 
 export default function Carousel() {
     return (
-        <div>
-            <div className={`${styles.dividertop}`}></div>
-            <div className={`${styles.carousel} d-flex`}>
-                <div className={`${styles.btnarrow} d-flex aic jcc`}>
-                    <div className={`${styles.point}`}>o</div>
-                    <div className={`${styles.blocarrow}`}>
-                        <div className={`${styles.badown}`}></div>
-                        <div className={`${styles.baup}`}></div>
-                    </div>
-                </div>
-                
+        <div className={`${styles.carousel} d-flex jcc`}>
+            <div className={`${styles.left} d-flex`}>
+                <button>left</button>
             </div>
-            <div className={`${styles.dividerbot}`}></div>
+            <div className={`${styles.imgcar} d-flex`}>
+                <img src={image} alt="" />
+            </div>
+            <div className={`${styles.right} d-flex`}>
+                <button>right</button>
+            </div>
         </div>
     )
 }
