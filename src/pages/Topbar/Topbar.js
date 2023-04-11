@@ -1,12 +1,13 @@
+import { NavLink } from 'react-router-dom'
 import styles from './Topbar.module.scss'
 
 export default function Topbar() {
     return (
         <div className={`${styles.topbar} d-flex`}>
             <div className={`${styles.topbarbtn} d-flex aic jcc`}>
-                <a href="">
+                <NavLink to = "/pros">
                     <h3>Organisme recherche groupe / JD</h3>
-                </a>
+                </NavLink>
             </div>
 
             <div className={`${styles.topbarbtn} ${styles.mid} d-flex aic jcc`}>

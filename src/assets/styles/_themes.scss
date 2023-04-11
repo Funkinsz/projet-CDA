@@ -1,6 +1,6 @@
 .btn {
     font-weight: 700;
-    padding: 5px 25px;
+    padding: 10px 25px;
     cursor: pointer;
     transition: 0.2 opacity;
     &:hover {
@@ -10,11 +10,9 @@
     &-primary {
         border: 0px solid var(--neon-blue);
         background-color: var(--dark-1) opacity;
-        color: var(--light-1);
     }
     &-primary-reverse {
         background-color: var(--dark-1) opacity;
-        color: var(--light-1);
         border: 0px solid var(--dark-1);
     }
 }

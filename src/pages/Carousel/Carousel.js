@@ -1,5 +1,5 @@
 import styles from './Carousel.module.scss'
-import image from '../assets/image/affiche_concert.jpg'
+import image from '../../assets/image/affiche_concert.jpg'
 
 export default function Carousel() {
     return (
@@ -7,7 +7,7 @@ export default function Carousel() {
             <div className={`${styles.left} d-flex`}>
                 <button>left</button>
             </div>
-            <div className={`${styles.imgcar} d-flex`}>
+            <div className={`${styles.imgcar} d-flex flex-fill`}>
                 <img src={image} alt="" />
             </div>
             <div className={`${styles.right} d-flex`}>

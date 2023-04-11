@@ -1,15 +1,16 @@
 import styles from './Header.module.scss'
 import {useEffect, useState} from 'react'
+import { NavLink } from 'react-router-dom';
 
 
 export default function Header() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     const toggletheme = () => {
-      if (theme === 'light') {
-        setTheme('dark');
+      if (theme === 'dark') {
+        setTheme('light');
       } else {
-        setTheme('light')
+        setTheme('dark')
       }
     }
   
@@ -18,14 +19,16 @@ export default function Header() {
     }, [theme]);
 
     return (
-        <header className={`d-flex jcsb p20 ${theme}`}>
+        <header className={`d-flex jcsb p10 ${theme}`}>
             <div className="mr20 index">
-                <h1 className={`${styles.logo}`}>LOGO</h1>
+                <NavLink to = "/">
+                    <h1 className={`${styles.logo}`}>LOGO</h1>
+                </NavLink>
             </div>
             <div className="d-flex m10 flex-fill jce mr20 search_bar index">
                 <div className='search d-flex'>
                     <span className='d-flex aic'>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                     </span>
                     <input 
                         type="text" 
@@ -35,34 +38,40 @@ export default function Header() {
                     />
                 </div>
             </div>
+
             <nav className="d-flex aic ml20 index">
-                <div className='d-flex flex-column btn-box pl5'>
-                    <button className={`btn btn-primary ${styles.navbtn}`}>
-                        USER
-                    </button>      
-                    <div class="divider"></div>
-                </div>
-                <div className='d-flex flex-row'>                   
-                    <div className='d-flex flex-column btn-box m5'>
+                <ul className='d-flex flex-row'>
+                    <li className='d-flex flex-column btn-box m5'>
                         <button className={`btn btn-primary ${styles.navbtn}`}>
-                            CONNEXION
-                        </button>
-                        <div class="divider"></div>
-                    </div>
-                    <div className='d-flex flex-column btn-box m5'>
-                        <button className={`btn btn-primary ${styles.navbtn}`}>
-                            INSCRIPTION
-                        </button>
-                        <div class="divider"></div>
-                    </div>              
-                </div>
+                            USER
+                        </button>      
+                        <div className="divider"></div>
+                    </li>
+
+                    <li className='d-flex flex-column btn-box m5'>
+                        <NavLink to = "/login">
+                            <button className={`btn btn-primary ${styles.navbtn}`}>
+                                CONNEXION
+                            </button>
+                        </NavLink>
+                        <div className="divider"></div>
+                    </li>
+                    <li className='d-flex flex-column btn-box m5'>
+                        <NavLink to = "/register">
+                            <button className={`btn btn-primary ${styles.navbtn}`}>
+                                INSCRIPTION
+                            </button>
+                            <div className="divider"></div>
+                        </NavLink>
+                    </li>
+                </ul>
 
                 <button className="toggle d-flex aic m5" onClick={toggletheme}>
                     <div className={theme === "light" ? "active " : 'dnone'}>
-                        <i class="fa-regular fa-sun"></i>
+                        <i className="fa-regular fa-sun"></i>
                     </div>
                     <div className={theme === "dark" ? "active " : 'dnone'}>
-                        <i class="fa-regular fa-moon"></i>
+                        <i className="fa-regular fa-moon"></i>
                     </div>
                 </button>
             </nav>

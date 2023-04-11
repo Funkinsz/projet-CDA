@@ -1,0 +1,31 @@
+.carousel {
+    height: 400px;
+    background-color: #111;
+    border-top: 2px solid var(--neon-pink);
+    .imgcar {
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+}
+
+.left {
+    width: 300px;
+    button {
+        width: 100%;
+        background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 25%);
+        border: 0;
+        color: white;
+    }
+}
+
+.right {
+    width: 300px;
+    button {
+        width: 100%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 25%);
+        border: 0;
+        color: white;
+    }
+}

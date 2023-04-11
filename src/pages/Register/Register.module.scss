@@ -1,0 +1,38 @@
+.contentform {
+    width: 1250px;
+    form {
+        border: solid 1px var(--neon-blue);
+        border-radius: 5px;
+        box-shadow: var(--neon-blue) 0 -1px 5px;
+        width: 85%;
+        .title {
+            width: 80%;
+            a {
+                border: 0;
+                background-color: rgba($color: #fff, $alpha: 0);
+                text-decoration: underline;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .groupeform {
+            width: 80%;
+        }
+        .btnform {
+            width: 80%;
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            button {
+                border-radius: 15px;
+                margin: 10px 0;
+                transition: 0.2s;
+                &:hover {
+                    transition: 0.2s;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
