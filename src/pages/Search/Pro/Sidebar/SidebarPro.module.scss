@@ -1,0 +1,16 @@
+.sidebar {
+    width: 300px;
+    .range-slider {
+        background-color: wheat;
+    }
+    .filter {
+        width: 100%;
+        select {
+            width: 90%;
+            border-radius: 5px;
+            option {
+                width: 90%;
+            }
+        }
+    }
+}

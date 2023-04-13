@@ -25,6 +25,9 @@
             }
         }
     }
+    section {
+        background-color: var(--light-2);
+    }
     .toggle {
         transition: 0.2s;
         &:hover {
@@ -91,6 +94,9 @@
                 }
             }
         }
+    }
+    section {
+        background-color: var(--dark-2);
     }
     .toggle {
         transition: 0.2s;
