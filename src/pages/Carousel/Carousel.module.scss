@@ -3,6 +3,7 @@
     background-color: #111;
     border-top: 2px solid var(--neon-pink);
     .imgcar {
+        overflow: hidden;
         img {
             height: auto;
             width: 100%;

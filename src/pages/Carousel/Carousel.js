@@ -7,7 +7,7 @@ export default function Carousel() {
             <div className={`${styles.left} d-flex`}>
                 <button>left</button>
             </div>
-            <div className={`${styles.imgcar} d-flex flex-fill`}>
+            <div className={`${styles.imgcar} d-flex flex-fill aic jcc`}>
                 <img src={image} alt="" />
             </div>
             <div className={`${styles.right} d-flex`}>

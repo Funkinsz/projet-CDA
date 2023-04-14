@@ -3,7 +3,7 @@
 }
 
 .light {
-    transition: 0.2s;
+    transition: 0.5s;
     background: var(--light-1);
     color: var(--dark-1);
     .content {
@@ -29,12 +29,11 @@
         background-color: var(--light-2);
     }
     .toggle {
-        transition: 0.2s;
+        transition: 0.5s;
         &:hover {
             transition: 0.2s;
-            transform: scale(1.1);
             border: 2px solid var(--neon-pink);
-            box-shadow: 0 1px 3px var(--neon-pink);
+            box-shadow: 0 3px var(--neon-pink);
             i {
                 color: var(--neon-pink);
             }
@@ -43,7 +42,7 @@
         border: 2px solid var(--dark-1);
         border-radius: 25px;
         background-color: var(--light-1);
-        box-shadow: 0 1px 3px var(--dark-1);
+        box-shadow: 0 3px var(--dark-1);
         height: 30px;
         i {
             color: var(--dark-2);
@@ -54,10 +53,19 @@
             display: none;
         }
     }
+    .toggle:active {
+        box-shadow: 0 1px var(--dark-1);
+        transform: translateY(2px)
+    }
+    .groupcontent {
+        background-color: var(--light-1);
+        box-shadow: 0 0 5px var(--neon-pink);
+        border: var(--neon-pink) 1px solid;
+    }
 }
 
 .dark {
-    transition: 0.2s;
+    transition: 0.5s;
     background-color: var(--dark-1);
     color: var(--light-1);
     .btn {
@@ -99,12 +107,11 @@
         background-color: var(--dark-2);
     }
     .toggle {
-        transition: 0.2s;
+        transition: 0.5s;
         &:hover {
             transition: 0.2s;
-            transform: scale(1.1);
             border: var(--neon-blue) 2px solid;
-            box-shadow: 0 1px 3px var(--neon-blue);
+            box-shadow: 0 3px var(--neon-blue);
             i {
                 transition: 0.2s;
                 color: var(--neon-blue);
@@ -114,7 +121,7 @@
         border: 2px solid var(--light-2);
         border-radius: 25px;
         background-color: var(--dark-1);
-        box-shadow: 0 1px 3px var(--light-1);
+        box-shadow: 0 3px var(--light-1);
         height: 30px;
         i {
             color: var(--light-2);
@@ -124,6 +131,15 @@
         .dnone {
             display: none;
         }
+    }
+    .toggle:active {
+        box-shadow: 0 1px var(--light-1);
+        transform: translateY(2px)
+    }
+    .groupcontent {
+        background-color: var(--dark-1);
+        box-shadow: 0 0 5px var(--neon-blue);
+        border: var(--neon-blue) 1px solid;
     }
 }
 
@@ -150,8 +166,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 1;
-    // border-bottom: 1px solid var(--neon-pink);
-    // box-shadow: var(--neon-pink) 0 1px 5px;
 }
 
 input {
@@ -165,7 +179,7 @@ input {
     .search {
         border-radius: 10px;
         border: var(--light-2) 1px solid;
-        max-width: 80%;
+        max-width: 100%;
         min-width: 30%;
         span {
             border: 0;

@@ -1,15 +1,6 @@
-import styles from './SidebarPro.module.scss';
-import React from "react"
-import Slider from "@mui/material/Slider"
+import styles from './SidebarBand.module.scss'
 
-export default function SidebarPro() {
-    const [range, setRange] = React.useState([0, 1000])
-
-    function handleChanges(e, newValue) {
-        setRange(newValue)
-    }
-
-    console.log(range);
+export default function SidebarBand() {
     return (
         <div className={`${styles.absolute}`}>
             <div className={`${styles.sidebar} sidebar d-flex flex-column aie p10`}>
@@ -36,26 +27,17 @@ export default function SidebarPro() {
                     </span>
                 </div>
                 <div className={`${styles.filter} p20`}>
-                    <span className='d-flex jce aic'>Sono : 
-                        <input type="checkbox" />
+                    <span className='d-flex jce aic'>
+                        Besoin de : 
+                        <select className='p5'>
+                            <option value="">
+                            </option>
+                        </select>
                     </span>
                 </div>
                 <div className={`${styles.filter} p20`}>
-                    <span className='d-flex jce'>Prix de {range[0]} à {range[1]} €</span>
-                    <div className={`${styles.rangeslider} d-flex jce`}>
-                        <Slider 
-                            className={`${styles.slider}`} 
-                            onChange={handleChanges} 
-                            value={range} 
-                            defaultValue={[range[0], range[1]]}
-                            min={0}
-                            max={1000}
-                        />
-                    </div>
-                </div>
-                <div className={`${styles.filter} p20`}>
                     <span className='d-flex jce aic'>
-                        Nombre de personne : 
+                        Département : 
                         <select className='p5'>
                             <option value="">
                             </option>

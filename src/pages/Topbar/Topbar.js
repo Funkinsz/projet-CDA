@@ -11,9 +11,9 @@ export default function Topbar() {
             </div>
 
             <div className={`${styles.topbarbtn} ${styles.mid} d-flex aic jcc`}>
-                <a href="">
+                <NavLink to = "/bands">
                     <h3>Groupe recherche orga</h3>
-                </a>
+                </NavLink>                
             </div>
 
             <div className={`${styles.topbarbtn} d-flex aic jcc`}>
