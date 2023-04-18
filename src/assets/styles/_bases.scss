@@ -16,7 +16,12 @@
         background-color: var(--light-2);
         .contentform {
             form {
+                border: 1px solid var(--neon-pink);
+                box-shadow: 0 0 5px var(--neon-pink);
                 background-color: var(--light-1);
+                input {
+                    border: 1px solid var(--dark-2);
+                }
                 .btnform {
                     button {
                         border: var(--dark-2) 2px solid;
@@ -61,6 +66,16 @@
         background-color: var(--light-1);
         box-shadow: 0 0 5px var(--neon-pink);
         border: var(--neon-pink) 1px solid;
+        .img {
+            .pp {
+                img {
+                    border: 1px solid var(--neon-pink);
+                }
+            }
+        }
+        span {
+            color: var(--dark-1);
+        }
     }
 }
 
@@ -140,6 +155,16 @@
         background-color: var(--dark-1);
         box-shadow: 0 0 5px var(--neon-blue);
         border: var(--neon-blue) 1px solid;
+        .img {
+            .pp {
+                img {
+                    border: 1px solid var(--neon-blue);
+                }
+            }
+        }
+        span {
+            color: var(--light-1);
+        }
     }
 }
 

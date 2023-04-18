@@ -7,8 +7,8 @@
     height: 280px;
     border-radius: 10px;
     overflow: hidden;
-    &:hover{
-        img{
+    &:hover {
+        .banner {
             transform: scale(1.2);
         }
     }
@@ -21,13 +21,15 @@
             transition: 0.5s;
             height: 100%;
             width: auto;
-
         }
-        span {
-            position: absolute;
-            font-size: 32px;
-            background-color: #99999920;
-            color: var(--light-1);
+        .pp {
+            margin-right: 115px;
+            img {
+                border-radius: 50px;
+                width: 80px;
+                height: 80px;
+                position: absolute;
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Newsletter from "../pages/Newsletter/Newsletter";
 import ProSearch from "../pages/Search/Pro/ProSearch";
 import BandSearch from "../pages/Search/Band/BandSearch";
+import ArtSearch from "../pages/Search/Art/ArtSearch";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
             {
                 path: '/bands',
                 element: <BandSearch />
+            },
+            {
+                path: '/arts',
+                element: <ArtSearch />
             }
         ]
     }
