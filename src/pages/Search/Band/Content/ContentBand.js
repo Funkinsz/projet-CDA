@@ -11,7 +11,7 @@ export default function ContentBand() {
                         <img src={image} alt="" />
                     </div>
                     <span className={`d-flex flex-fill aic jcc`}>
-                        <h2>NOM DU GROUPE</h2>
+                        <h3>NOM DU GROUPE</h3>
                     </span>
                 </div>
 
