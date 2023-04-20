@@ -144,7 +144,16 @@ export default function Register() {
                                     message: "Ce champs doit être rempli"
                                 }
                             })} />
-                            <button type='button' onClick={togglePassword}>°</button>
+                            <button type='button' onClick={togglePassword}>
+                                {
+                                    passwordShow === false
+                                    ? (
+                                        <i class="fa-regular fa-eye-slash"></i>
+                                    ) : (
+                                        <i class="fa-solid fa-eye"></i>
+                                    )
+                                }
+                            </button>
                         </div>
                         {errors?.password && <p className='error'>{errors.password.message}</p>}
                     </div>
@@ -158,7 +167,16 @@ export default function Register() {
                                     message: "Ce champs doit être rempli"
                                 }
                             })} />
-                            <button type='button' onClick={togglePassword}>°</button>
+                            <button type='button' onClick={togglePassword}>
+                                {
+                                    passwordShow === false
+                                    ? (
+                                        <i class="fa-regular fa-eye-slash"></i>
+                                    ) : (
+                                        <i class="fa-solid fa-eye"></i>
+                                    )
+                                }
+                            </button>
                         </div>
                         {errors?.confirmPSWD && <p className='error'>{errors.confirmPSWD.message}</p>}
                     </div>
