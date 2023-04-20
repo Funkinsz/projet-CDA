@@ -1,6 +1,8 @@
 import styles from './Header.module.scss'
 import {useEffect, useState} from 'react'
 import { NavLink } from 'react-router-dom';
+import logoDark from "../assets/image/Logo noir Presta'.png";
+import logoLight from "../assets/image/Logo blanc Presta'.png";
 
 
 export default function Header() {
@@ -19,14 +21,21 @@ export default function Header() {
     }, [theme]);
 
     return (
-        <header className={`d-flex jcsb p10 ${theme}`}>
+        <header className={`d-flex jcsb ${theme}`}>
             <div className="mr20 index">
-                <NavLink to = "/">
-                    <h1 className={`${styles.logo}`}>LOGO</h1>
+                <NavLink>
+                    {
+                        theme === 'dark'
+                        ? (
+                            <img src={logoDark} className={`${styles.logo}`}/>
+                        ) : (
+                            <img src={logoLight} className={`${styles.logo}`}/>
+                        )
+                    }
                 </NavLink>
             </div>
-            <div className="d-flex m10 flex-fill jce mr20 search_bar index">
-                <div className='search d-flex'>
+            <div className={`d-flex m10 flex-fill aic jce mr20 search_bar index`}>
+                <div className={`${styles.input} search d-flex`}>
                     <span className='d-flex aic'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </span>
@@ -35,6 +44,7 @@ export default function Header() {
                         name="search_bar" 
                         id="search_bar" 
                         placeholder="Recherche..."
+                        className='p10'
                     />
                 </div>
             </div>
@@ -66,7 +76,7 @@ export default function Header() {
                     </li>
                 </ul>
 
-                <button className="toggle d-flex aic m5" onClick={toggletheme}>
+                <button className="toggle d-flex aic" onClick={toggletheme}>
                     <div className={theme === "light" ? "active " : 'dnone'}>
                         <i className="fa-regular fa-sun"></i>
                     </div>
