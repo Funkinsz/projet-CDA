@@ -12,8 +12,6 @@ export default function Register() {
     // du statut professionnel au statut particulier
     const [user_type, setUserType] = useState('perso')
 
-    console.log("test");
-
     const toggleUserType = () => {
         if (user_type === 'perso') {
             setUserType('pro')
