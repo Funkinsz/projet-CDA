@@ -1,8 +1,8 @@
 import styles from './Header.module.scss'
 import {useEffect, useState} from 'react'
 import { NavLink } from 'react-router-dom';
-import logoDark from "../assets/image/Logo noir Presta'.png";
-import logoLight from "../assets/image/Logo blanc Presta'.png";
+import logoDark from "../assets/image/Logo/Logo noir Presta'.png";
+import logoLight from "../assets/image/Logo/Logo blanc Presta'.png";
 
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
     return (
         <header className={`d-flex jcsb ${theme}`}>
             <div className="mr20 index">
-                <NavLink>
+                <NavLink to = "/">
                     {
                         theme === 'dark'
                         ? (
