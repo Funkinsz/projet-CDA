@@ -32,4 +32,18 @@
             }
         }
     }
+    .pswd {
+        background-color: var(--light-1);
+        border-radius: 10px;
+        input {
+            width: 95%;
+        }
+        button {
+            background-color: var(--light-1);
+            border: 0;
+            border-radius: 10px;
+            margin-right: 5px;
+            width: 25px;
+        }
+    }
 }
