@@ -1,13 +1,15 @@
 import styles from './Header.module.scss'
-import {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import logoDark from "../assets/image/Logo/Logo noir Presta'.png";
 import logoLight from "../assets/image/Logo/Logo blanc Presta'.png";
 
 
 export default function Header() {
+    // initialise le theme du site en dark mode avec un useState
     const [theme, setTheme] = useState('dark');
 
+    // function qui switch le theme de dark a light en écoute sur un bouton
     const toggletheme = () => {
       if (theme === 'dark') {
         setTheme('light');
@@ -16,13 +18,32 @@ export default function Header() {
       }
     }
   
+    // création de la classe qui fera la modification du style
     useEffect(() => {
       document.body.className = theme;
     }, [theme]);
 
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+            setPrevScrollPos(currentScrollPos);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [prevScrollPos, visible, setVisible])
+    
     return (
-        <header className={`d-flex jcsb ${theme}`}>
-            <div className="mr20 index">
+        <header 
+            className={`d-flex jcsb ${theme}`}
+            style={{top: visible ? "0" : "-131px"}}
+        >
+            <div 
+                className={`mr20 ${styles.index}`}>
                 <NavLink to = "/">
                     {
                         theme === 'dark'

@@ -95,7 +95,7 @@ export default function Register() {
 
                                 <div className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
                                     <label className='m5' name='surname' htmlFor="">Nom de scène</label>
-                                    <input type="text" name='surname' {...register("surname", {
+                                    <input className={`${styles.input}`} type="text" name='surname' {...register("surname", {
                                         required: {
                                             value: true,
                                             message: "Ce champs doit être rempli"
@@ -113,7 +113,7 @@ export default function Register() {
         
                             <div className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
                                 <label className='m5' name='surname' htmlFor="">Nom de l'organisme</label>
-                                <input type="text" name='surname' {...register("surname", {
+                                <input className={`${styles.input}`} type="text" name='surname' {...register("surname", {
                                     required: {
                                         value: true,
                                         message: "Ce champs doit être rempli"
@@ -126,7 +126,7 @@ export default function Register() {
                     }    
                     <div className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
                         <label className='m5' name='email' htmlFor="">Adresse e-mail</label>
-                        <input type="email" name='email' {...register("email", {
+                        <input className={`${styles.input}`} type="email" name='email' {...register("email", {
                             required: {
                                 value: true,
                                 message: "Ce champs doit être rempli"
@@ -183,7 +183,7 @@ export default function Register() {
 
                     <div className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
                         <label className='m5' name='date' htmlFor="">Date de naissance</label>
-                        <input type="date" name='date' {...register("date", {
+                        <input className={`${styles.input}`} type="date" name='date' {...register("date", {
                             required: {
                                 value: true,
                                 message: "Ce choix doit être rempli"
