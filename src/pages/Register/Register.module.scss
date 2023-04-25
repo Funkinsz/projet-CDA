@@ -1,55 +1,59 @@
 .contentform {
     width: 1330px;
-    form {
-        border: solid 1px var(--neon-blue);
-        border-radius: 5px;
-        box-shadow: var(--neon-blue) 0 -1px 5px;
-        width: 66%;
-        .title {
-            width: 80%;
-            a {
-                border: 0;
-                background-color: rgba($color: #fff, $alpha: 0);
-                text-decoration: underline;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
-        .groupeform {
-            width: 50%;
-            .input {
-                border: 1px solid var(--dark-1);
-            }
-        }
-        .btnform {
-            width: 80%;
-            button {
-                border-radius: 15px;
-                margin: 10px 0;
-                transition: 0.2s;
-                &:hover {
-                    transition: 0.2s;
-                    transform: scale(1.1);
-                }
+    .title {
+        width: 80%;
+        a {
+            border: 0;
+            background-color: rgba($color: #fff, $alpha: 0);
+            text-decoration: underline;
+            &:hover {
+                cursor: pointer;
             }
         }
     }
-    .pswd {
-        background-color: var(--light-1);
-        border-radius: 10px;
-        border: 1px solid var(--dark-1);
-        input {
-            width: 95%;
+    form {
+        .block {
+            border: solid 1px var(--neon-blue);
+            border-radius: 5px;
+            box-shadow: var(--neon-blue) 0 -1px 5px;
+            width: 700px;
+            position: absolute;
+            padding: 20px 80px;
+            .groupeform {
+                width: 100%;
+                .input {
+                    border: 1px solid var(--dark-1);
+                }
+            }
+            .btnform {
+                width: 80%;
+                button {
+                    border-radius: 15px;
+                    margin: 10px 0;
+                    transition: 0.2s;
+                    &:hover {
+                        transition: 0.2s;
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
-        button {
+        .pswd {
             background-color: var(--light-1);
-            border: 0;
             border-radius: 10px;
-            margin-right: 5px;
-            width: 25px;
-            i {
-                color: var(--dark-1);
+            border: 1px solid var(--dark-1);
+            input {
+                width: 95%;
+            }
+            button {
+                background-color: var(--light-1);
+                border: 0;
+                border-radius: 10px;
+                margin-right: 5px;
+                width: 25px;
+                i {
+                    color: var(--dark-1);
+                }
             }
         }
     }

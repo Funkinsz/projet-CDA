@@ -2,12 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Homepage from "../pages/HomePage/Homepage";
 import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register"
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Newsletter from "../pages/Newsletter/Newsletter";
 import ProSearch from "../pages/Search/Pro/ProSearch";
 import BandSearch from "../pages/Search/Band/BandSearch";
 import ArtSearch from "../pages/Search/Art/ArtSearch";
+import HomeRegister from "../pages/Register/HomeRegister";
+import RegisterPerso from "../pages/Register/PersoRegister/Register";
+import RegisterPro from "../pages/Register/ProRegister/Register";
 
 export const router = createBrowserRouter([
     {
@@ -30,8 +32,16 @@ export const router = createBrowserRouter([
                 element: <Login />
             },
             {
-                path: '/register',
-                element: <Register />
+                path: '/home-register',
+                element: <HomeRegister />,
+            },
+            {
+                path: '/register-perso',
+                element: <RegisterPerso />
+            },
+            {
+                path: '/register-pro',
+                element: <RegisterPro />
             },
             {
                 path: '/newsletter',
