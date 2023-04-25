@@ -93,7 +93,17 @@ export default function RegisterPro() {
     async function submit(values) {
         console.log(values);
         try {
-            
+            const response = await fetch("http://localhost:8000/addUser", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(values)
+            })
+            if (response.ok) {
+                const newUser = await response.json()
+                reset(initialValues)
+            }
         } catch (error) {
             console.error(error);
         }
@@ -102,7 +112,7 @@ export default function RegisterPro() {
     return(
         <div className={`${styles.log} log d-flex flex-fill flex-column aic`}>
             <div className={`${styles.contentform} contentform d-flex flex-column aic jcc`}>
-                <div className={`${styles.title} title d-flex flex-column aic m20`}>
+                <div className={`${styles.title} title d-flex flex-column aic m10`}>
                         <h1 className={`${styles.titre} m5`}>INSCRIPTION</h1>
                         <NavLink to="/register-perso">
                             Je ne suis pas un organisateur d'évènement mais artiste ou DJ →

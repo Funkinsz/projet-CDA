@@ -91,7 +91,7 @@ export default function RegisterPro() {
     })
 
     async function submit(values) {
-        console.log(values);
+        console.log(values.password);
         try {
             
         } catch (error) {
@@ -102,7 +102,7 @@ export default function RegisterPro() {
     return(
         <div className={`${styles.log} log d-flex flex-fill flex-column aic`}>
             <div className={`${styles.contentform} contentform d-flex flex-column aic jcc`}>
-                <div className={`${styles.title} title d-flex flex-column aic m20`}>
+                <div className={`${styles.title} title d-flex flex-column aic m10`}>
                         <h1 className={`${styles.titre} m5`}>INSCRIPTION</h1>
                         <NavLink to="/register-pro">
                             Je ne suis pas un artiste ou DJ mais un organisateur d'évènement →
@@ -115,7 +115,7 @@ export default function RegisterPro() {
                     style={{visibility: isHidden === false ? "visible" : "hidden"}}>       
 
                         <div className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
-                            <label className='m5' name='surname' htmlFor="">Nom d'organisateur</label>
+                            <label className='m5' name='surname' htmlFor="">Nom de scène</label>
                             <input className={`${styles.input}`} type="text" name='surname' {...register("surname", {
                                 required: {
                                     value: true,

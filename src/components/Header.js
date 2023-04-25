@@ -88,7 +88,7 @@ export default function Header() {
                         <div className="divider"></div>
                     </li>
                     <li className='d-flex flex-column btn-box m5'>
-                        <NavLink to = "/register">
+                        <NavLink to = "/home-register">
                             <button className={`btn btn-primary ${styles.navbtn}`}>
                                 INSCRIPTION
                             </button>
