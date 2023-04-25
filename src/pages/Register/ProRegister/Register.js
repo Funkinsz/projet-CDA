@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
-// import { createUser } from '../../apis/user'
 import { NavLink, Navigate, useNavigate } from "react-router-dom"
 
 
@@ -39,7 +38,7 @@ export default function RegisterPro() {
         password: yup
             .string()
             .required("Ce champs doit être saisi")
-            .min(8, "Le mot de passe doit contenir 8 caractères"),
+            .min(8, "Le mot de passe doit contenir 8 caractères au minimum"),
         confirmPSWD: yup
             .string()
             .required("Ce champs doit être saisi")
@@ -79,8 +78,6 @@ export default function RegisterPro() {
         travel: ""
     }
 
-    console.log(initialValues.status);
-
     const { 
         handleSubmit,
         register,
@@ -91,7 +88,6 @@ export default function RegisterPro() {
     })
 
     async function submit(values) {
-        console.log(values);
         try {
             const response = await fetch("http://localhost:8000/addUser", {
                 method: "POST",
@@ -100,14 +96,20 @@ export default function RegisterPro() {
                 },
                 body: JSON.stringify(values)
             })
+            const responseFromBackEnd = await response.json()
+            console.log(responseFromBackEnd);
             if (response.ok) {
-                const newUser = await response.json()
+                await response.json()
                 reset(initialValues)
             }
+            console.log(result);
         } catch (error) {
             console.error(error);
+            const responseFromBackEnd = await response.json()
+            console.log(responseFromBackEnd);
         }
     }
+    
 
     return(
         <div className={`${styles.log} log d-flex flex-fill flex-column aic`}>
