@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { NavLink, Navigate, useNavigate } from "react-router-dom"
-
+import { NavLink, useNavigate } from "react-router-dom"
+import { createUser, verifyUser } from '../../../apis/user'
 
 export default function RegisterPro() {
     // Toggle pour charger les etape du formulaire
@@ -82,34 +82,32 @@ export default function RegisterPro() {
         handleSubmit,
         register,
         formState: {errors, isSubmitting},
+        setError,
+        clearErrors
     } = useForm({
         initialValues,
         resolver: yupResolver(validationSchema)
     })
 
-    async function submit(values) {
+    const submit = handleSubmit(async (values) => {
         try {
-            const response = await fetch("http://localhost:8000/addUser", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(values)
-            })
-            const responseFromBackEnd = await response.json()
-            console.log(responseFromBackEnd);
-            if (response.ok) {
-                await response.json()
-                reset(initialValues)
-            }
-            console.log(result);
+            clearErrors()
+            await verifyUser(values)
+            setError("generic", {type: "generic", message: "Adresse email déjà utilisé"})
+            console.log("test 1");
         } catch (error) {
-            console.error(error);
-            const responseFromBackEnd = await response.json()
-            console.log(responseFromBackEnd);
+            clearErrors()
+            try {
+                clearErrors()
+                await createUser(values)
+                navigate("/login")
+                console.log("test 2");
+            } catch (message) {
+                console.error(message);
+                console.log("test 3");
+            }
         }
-    }
-    
+    })
 
     return(
         <div className={`${styles.log} log d-flex flex-fill flex-column aic`}>
@@ -121,7 +119,7 @@ export default function RegisterPro() {
                         </NavLink>
                     </div>
 
-                <form onSubmit={handleSubmit(submit)} className={`${styles.form} d-flex flex-column aic m5 p5`}>
+                <form onSubmit={submit} className={`${styles.form} d-flex flex-column aic m5 p5`}>
 
                     <div className={`${styles.block} d-flex flex-column flex-fill aic jcc`} 
                     style={{visibility: isHidden === false ? "visible" : "hidden"}}>       
@@ -272,11 +270,17 @@ export default function RegisterPro() {
                             {errors?.travel && <p className='error'>{errors.travel.message}</p>}
                         </div>
 
+                        {errors.generic && (
+                            <p className='error'>
+                                {errors.generic.message}
+                            </p>
+                        )}
+
                         <div className={`${styles.groupBTN}`}>
                             <button onClick={toggleHidden} type='button' className='btn btn-primary'>
                                 PRECEDENT
                             </button>
-                            <button type='submit' className='btn btn-primary'>
+                            <button disabled={isSubmitting} className='btn btn-primary'>
                                 VALIDER
                             </button>
                         </div>
