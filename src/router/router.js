@@ -10,11 +10,15 @@ import ArtSearch from "../pages/Search/Art/ArtSearch";
 import HomeRegister from "../pages/Register/HomeRegister";
 import RegisterPerso from "../pages/Register/PersoRegister/Register";
 import RegisterPro from "../pages/Register/ProRegister/Register";
+import { userLoader } from "../Loader/userLoader";
+import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import Profile from "../pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
+        loader: userLoader,
         errorElement: <ErrorPage />,
         children: [
             {
@@ -33,7 +37,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/home-register',
-                element: <HomeRegister />,
+                element: <HomeRegister />
             },
             {
                 path: '/register-perso',
@@ -58,6 +62,14 @@ export const router = createBrowserRouter([
             {
                 path: '/arts',
                 element: <ArtSearch />
+            },
+            {
+                path: '/profile',
+                element: (
+                    <ProtectedRoute>
+                        <Profile />
+                    </ProtectedRoute>
+                )
             }
         ]
     }
