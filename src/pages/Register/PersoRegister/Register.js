@@ -308,7 +308,7 @@ export default function RegisterPro() {
                 <div
                   className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
                   <label className="m5" name="travel" htmlFor="">
-                    Disponibilité en KM
+                    Disponibilité en Km
                   </label>
                   <input
                     className={`${styles.input}`}

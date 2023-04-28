@@ -40,8 +40,8 @@ export default function Login() {
     try {
       clearErrors();
       await signin(values);
-    } catch (message) {
-      setError("generic", { type: "generic", message });
+    } catch (error) {
+      setError("generic", { type: "generic", message: "Email ou mot de passe incorrect" });
     }
   });
 
@@ -65,7 +65,7 @@ export default function Login() {
                 </label>
                 <input type="email" name="email" {...register("email")} />
                 {errors.email && (
-                  <p className="form-error">{errors.email.message}</p>
+                  <p className="error">{errors.email.message}</p>
                 )}
               </div>
 
@@ -80,12 +80,12 @@ export default function Login() {
                   {...register("password")}
                 />
                 {errors.password && (
-                  <p className="form-error">{errors.password.message}</p>
+                  <p className="error">{errors.password.message}</p>
                 )}
               </div>
 
               {errors.generic && (
-                <p className="form-error">{errors.generic.message}</p>
+                <p className="error">{errors.generic.message}</p>
               )}
 
               <div className={`${styles.btnform} btnform d-flex jcc p20`}>
