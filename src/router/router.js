@@ -13,6 +13,7 @@ import RegisterPro from "../pages/Register/ProRegister/Register";
 import { userLoader } from "../Loader/userLoader";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import Profile from "../pages/Profile/Profile";
+import Forget from "../pages/Forget/Forget";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/forget',
+                element: <Forget />
             },
             {
                 path: '/home-register',

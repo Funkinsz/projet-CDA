@@ -1,0 +1,29 @@
+.contentform {
+    width: 1330px;
+    form {
+        border: solid 1px var(--neon-blue);
+        border-radius: 5px;
+        box-shadow: var(--neon-blue) 0 -1px 5px;
+        width: 66%;
+        .groupeform {
+            width: 50%;
+        }
+        a {
+            text-decoration: none;
+            text-decoration: underline;
+            .forget {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .btnform {
+            width: 80%;
+            button {
+                border-radius: 15px;
+                margin: 10px 0;
+                transition: 0.2s;
+            }
+        }
+    }
+}

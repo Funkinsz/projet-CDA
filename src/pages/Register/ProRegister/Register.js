@@ -97,7 +97,7 @@ export default function RegisterPro() {
       clearErrors();
       try {
         clearErrors();
-        await createUserPro(values);
+        await createUserPerso(values);
         navigate("/login");
       } catch (message) {
         console.error(message);

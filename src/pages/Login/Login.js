@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styles from "./Login.module.scss";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Navigate } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context";
 
@@ -41,7 +41,10 @@ export default function Login() {
       clearErrors();
       await signin(values);
     } catch (error) {
-      setError("generic", { type: "generic", message: "Email ou mot de passe incorrect" });
+      setError("generic", {
+        type: "generic",
+        message: "Email ou mot de passe incorrect",
+      });
     }
   });
 
@@ -60,7 +63,7 @@ export default function Login() {
 
               <div
                 className={`${styles.groupeform} groupeform d-flex flex-column m10 p10`}>
-                <label className="m5" name="email" htmlFor="">
+                <label className="m5" name="email">
                   Adresse e-mail
                 </label>
                 <input type="email" name="email" {...register("email")} />
@@ -71,7 +74,7 @@ export default function Login() {
 
               <div
                 className={`${styles.groupeform} groupeform d-flex flex-column m10 p10`}>
-                <label className="m5" name="password" htmlFor="">
+                <label className="m5" name="password">
                   Mot de passe
                 </label>
                 <input
@@ -82,6 +85,12 @@ export default function Login() {
                 {errors.password && (
                   <p className="error">{errors.password.message}</p>
                 )}
+              </div>
+
+              <div className={`${styles.forget} forget`}>
+                <NavLink to = "/forget">
+                  <small>Mot de passe oublié</small>
+                </NavLink>
               </div>
 
               {errors.generic && (

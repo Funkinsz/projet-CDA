@@ -8,16 +8,21 @@
         .groupeform {
             width: 50%;
         }
+        a {
+            text-decoration: none;
+            text-decoration: underline;
+            .forget {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
         .btnform {
             width: 80%;
             button {
                 border-radius: 15px;
                 margin: 10px 0;
                 transition: 0.2s;
-                &:hover {
-                    transition: 0.2s;
-                    transform: scale(1.1);
-                }
             }
         }
     }
