@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
-import { createUserPro, verifyUser } from "../../../apis/user";
+import { createUserPerso, verifyUser } from "../../../apis/user";
 import { AuthContext } from "../../../context";
 
 export default function RegisterPro() {
@@ -112,7 +112,8 @@ export default function RegisterPro() {
       ) : (
         <div className={`${styles.log} log d-flex flex-fill flex-column aic`}>
           <div
-            className={`${styles.contentform} contentform d-flex flex-column aic jcc`}>
+            className={`${styles.contentform} contentform d-flex flex-column aic jcc`}
+          >
             <div className={`${styles.title} title d-flex flex-column aic m10`}>
               <h1 className={`${styles.titre} m5`}>INSCRIPTION</h1>
               <NavLink to="/register-perso">
@@ -122,14 +123,17 @@ export default function RegisterPro() {
 
             <form
               onSubmit={submit}
-              className={`${styles.form} d-flex flex-column aic m5 p5`}>
+              className={`${styles.form} d-flex flex-column aic m5 p5`}
+            >
               <div
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
                   visibility: isHidden === false ? "visible" : "hidden",
-                }}>
+                }}
+              >
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="surname" htmlFor="">
                     Nom d'organisateur
                   </label>
@@ -161,7 +165,8 @@ export default function RegisterPro() {
                 />
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="email" htmlFor="">
                     Adresse e-mail
                   </label>
@@ -182,7 +187,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="password" htmlFor="">
                     Mot de passe
                   </label>
@@ -211,7 +217,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="confirmPSWD" htmlFor="">
                     Confirmation du mot de passe
                   </label>
@@ -240,7 +247,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="date" htmlFor="">
                     Date de naissance
                   </label>
@@ -264,7 +272,8 @@ export default function RegisterPro() {
                   <button
                     onClick={toggleHidden}
                     type="button"
-                    className="btn btn-primary">
+                    className="btn btn-primary"
+                  >
                     SUIVANT
                   </button>
                 </div>
@@ -274,9 +283,11 @@ export default function RegisterPro() {
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
                   visibility: isHidden === true ? "visible" : "hidden",
-                }}>
+                }}
+              >
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="name" htmlFor="">
                     Nom
                   </label>
@@ -308,7 +319,8 @@ export default function RegisterPro() {
                 />
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="firstname" htmlFor="">
                     Prenom
                   </label>
@@ -329,7 +341,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="city" htmlFor="">
                     Ville
                   </label>
@@ -350,7 +363,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="adress" htmlFor="">
                     Adresse
                   </label>
@@ -378,7 +392,8 @@ export default function RegisterPro() {
                   <button
                     onClick={toggleHidden}
                     type="button"
-                    className="btn btn-primary">
+                    className="btn btn-primary"
+                  >
                     PRECEDENT
                   </button>
                   <button disabled={isSubmitting} className="btn btn-primary">

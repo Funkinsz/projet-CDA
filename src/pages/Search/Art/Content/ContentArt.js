@@ -4,7 +4,7 @@ import image from '../../../../assets/image/affiche_concert.jpg'
 export default function ContentArt() {
     return (
         <section className={`${styles.section} section d-flex`}>
-            <div className={`${styles.content} d-flex flex-row wrap aic p10`}>
+            <div className={`${styles.content} d-flex flex-row wrap p10`}>
 
                 <div className={`${styles.groupcontent} groupcontent d-flex flex-column m10`}>
                     <div className={`${styles.img} img d-flex flex-column jcc aic`}>

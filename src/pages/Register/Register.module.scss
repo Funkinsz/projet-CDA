@@ -1,78 +1,78 @@
 .contentform {
-    width: 1330px;
-    .title {
+  width: 1330px;
+  .title {
+    width: 80%;
+    a {
+      border: 0;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  form {
+    .block {
+      border: solid 1px var(--neon-blue);
+      border-radius: 5px;
+      box-shadow: var(--neon-blue) 0 -1px 5px;
+      width: 700px;
+      position: absolute;
+      padding: 20px 80px;
+      .groupeform {
+        width: 100%;
+        .input {
+          border: 1px solid var(--dark-1);
+        }
+      }
+      .btnform {
         width: 80%;
-        a {
-            border: 0;
-            text-decoration: none;
-            &:hover {
-                cursor: pointer;
-            }
+        button {
+          border-radius: 15px;
+          margin: 10px 0;
         }
+      }
     }
-    form {
-        .block {
-            border: solid 1px var(--neon-blue);
-            border-radius: 5px;
-            box-shadow: var(--neon-blue) 0 -1px 5px;
-            width: 700px;
-            position: absolute;
-            padding: 20px 80px;
-            .groupeform {
-                width: 100%;
-                .input {
-                    border: 1px solid var(--dark-1);
-                }
-            }
-            .btnform {
-                width: 80%;
-                button {
-                    border-radius: 15px;
-                    margin: 10px 0;
-                }
-            }
+    .pswd {
+      background-color: var(--light-1);
+      border-radius: 10px;
+      border: 1px solid var(--dark-1);
+      input {
+        width: 95%;
+      }
+      button {
+        background-color: var(--light-1);
+        border: 0;
+        border-radius: 10px;
+        margin-right: 5px;
+        width: 25px;
+        i {
+          color: var(--dark-1);
         }
-        .pswd {
-            background-color: var(--light-1);
-            border-radius: 10px;
-            border: 1px solid var(--dark-1);
-            input {
-                width: 95%;
-            }
-            button {
-                background-color: var(--light-1);
-                border: 0;
-                border-radius: 10px;
-                margin-right: 5px;
-                width: 25px;
-                i {
-                    color: var(--dark-1);
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .card {
-    box-shadow: 0px 0px 15px var(--neon-blue);
+  box-shadow: 0px 0px 15px var(--neon-blue);
+  transition: 0.3s;
+  width: 600px;
+  height: 350px;
+  overflow: hidden;
+  background-color: transparent;
+  img {
+    filter: blur(1px);
+  }
+  h2 {
+    font-size: 60px;
+    position: absolute;
+    color: white;
+    text-shadow: 2px 0 #111, -2px 0 #111, 0 2px #111, 0 -2px #111, 1px 1px #111,
+      -1px -1px #111, 1px -1px #111, -1px 1px #111;
+  }
+  &:hover {
+    box-shadow: 0px 0px 50px var(--neon-pink);
     transition: 0.3s;
-    width: 600px;
-    height: 350px;
-    overflow: hidden;
-    background-color: transparent;
-    img {
-        filter: blur(1px);
-    }
-    h2 {
-        font-size: 60px;
-        position: absolute;
-        color: white;
-        text-shadow: 2px 0 #111, -2px 0 #111, 0 2px #111, 0 -2px #111,
-        1px 1px #111, -1px -1px #111, 1px -1px #111, -1px 1px #111;
-    }
-    &:hover {
-        box-shadow: 0px 0px 50px var(--neon-pink);
-        transition: 0.3s;
-        transform: scale(1.1);
-    }
+    transform: scale(1.1);
+  }
 }

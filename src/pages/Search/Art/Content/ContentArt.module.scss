@@ -8,6 +8,7 @@
     border-radius: 10px;
     overflow: hidden;
     &:hover {
+        cursor: pointer;
         .banner {
             transform: scale(1.2);
         }

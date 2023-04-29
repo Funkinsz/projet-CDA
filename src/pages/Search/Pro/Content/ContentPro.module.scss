@@ -1,24 +1,32 @@
 .content {
-    width: 1000px;
+  width: 1000px;
 }
 
 .groupcontent {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    .img {
-        min-width: 150px;
-        width: 150px;
-        img {
-            height: 100%;
-            width: auto;
-            filter: blur(3px);
-        }
-        span {
-            position: absolute;
-            font-size: 32px;
-            background-color: #99999920;
-            color: var(--light-1);
-        }
+  transition: 0.2s;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 220px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.2s;
+  }
+  .img {
+    min-width: 218px;
+    width: 218px;
+    img {
+      height: 100%;
+      width: auto;
+      filter: blur(1px);
     }
+    span {
+      position: absolute;
+      font-size: 40px;
+      color: var(--light-1);
+      text-shadow: 2px 0 #111, -2px 0 #111, 0 2px #111, 0 -2px #111,
+      1px 1px #111, -1px -1px #111, 1px -1px #111, -1px 1px #111;
+    }
+  }
 }
