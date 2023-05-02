@@ -1,0 +1,22 @@
+.profileContainer {
+  width: 1300px;
+  background-color: var(--dark-1);
+  .profileHeader {
+    height: 200px;
+    .banner {
+      width: 100%;
+      .pp {
+        width: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+      h1 {
+          position: absolute;
+      }
+    }
+  }
+}
