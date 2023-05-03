@@ -41,7 +41,8 @@ export default function Header() {
   return (
     <header
       className={`d-flex jcsb ${theme}`}
-      style={{ top: visible ? "0" : "-131px" }}>
+      style={{ top: visible ? "0" : "-131px" }}
+    >
       <div className={`mr20 ${styles.index}`}>
         <NavLink to="/">
           {theme === "dark" ? (
@@ -79,7 +80,7 @@ export default function Header() {
                 <div className="divider"></div>
               </li>
               <li className="d-flex flex-column btn-box m5">
-                <NavLink onClick={() => signout()} to='/login'>
+                <NavLink onClick={() => signout()} to="/login">
                   <button className={`btn btn-primary ${styles.navbtn}`}>
                     DECONNEXION
                   </button>
