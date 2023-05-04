@@ -42,12 +42,11 @@ export default function HomeRegister() {
         <Navigate to="/profile" />
       ) : (
         <>
-          <Topbar />
           <div className={`${styles.content} d-flex flex-fill aic jcse`}>
             <NavLink to="/register-perso">
               <div className={`${styles.card} d-flex flex-column aic jcc card`}>
                 <img src={`${perso[random1]}`} alt="" />
-                <h2>ARTISITE</h2>
+                <h2>ARTISTE</h2>
               </div>
             </NavLink>
             <NavLink to="/register-pro">
