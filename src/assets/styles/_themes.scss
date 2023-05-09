@@ -1,41 +1,50 @@
 .btn {
-    font-weight: 700;
-    padding: 10px 25px;
-    cursor: pointer;
-    transition: 0.2 opacity;
-    &:hover {
-        transition: 0.2s opacity;
-        opacity: 0.95;
+  font-weight: 700;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: 0.2 opacity;
+  &:hover {
+    transition: 0.2s opacity;
+    opacity: 0.95;
+  }
+  &-primary {
+    border: 0px solid var(--neon-blue);
+    background-color: var(--dark-1) opacity;
+  }
+  &-primary-reverse {
+    background-color: var(--dark-1) opacity;
+    border: 0px solid var(--dark-1);
+  }
+}
+
+li {
+  .active {
+    border-bottom: 2px solid var(--neon-blue);
+    .divider {
+      box-shadow: var(--neon-blue) 0px 1px 5px;
     }
-    &-primary {
-        border: 0px solid var(--neon-blue);
-        background-color: var(--dark-1) opacity;
-    }
-    &-primary-reverse {
-        background-color: var(--dark-1) opacity;
-        border: 0px solid var(--dark-1);
-    }
+  }
 }
 
 .divider {
-    height: 2px;
-    width: 0px;
-    transition: width 0.5s;
-    background-color: var(--neon-pink);
-    box-shadow: var(--neon-pink) 0px 1px 5px;  
+  height: 2px;
+  width: 0px;
+  transition: width 0.5s;
+  background-color: var(--neon-pink);
+  box-shadow: var(--neon-pink) 0px 1px 5px;
 }
 
 .btn-box:hover {
-    &:hover {
-        .divider {
-            width: 100%;
-            background-color: var(--neon-blue);
-            box-shadow: var(--neon-blue) 0px 1px 5px;  
-        }
+  &:hover {
+    .divider {
+      width: 100%;
+      background-color: var(--neon-blue);
+      box-shadow: var(--neon-blue) 0px 1px 5px;
     }
+  }
 }
 
 .card {
-    border-radius: 20px;
-    background-color: white;
+  border-radius: 20px;
+  background-color: white;
 }

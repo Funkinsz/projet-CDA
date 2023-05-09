@@ -72,7 +72,7 @@ export default function Header() {
           {user ? (
             <>
               <li className="d-flex flex-column btn-box m5">
-                <NavLink to="/profile">
+                <NavLink to={`/profile/${user.surname}`}>
                   <button className={`btn btn-primary ${styles.navbtn}`}>
                     {user.surname.toUpperCase()}
                   </button>
@@ -91,7 +91,7 @@ export default function Header() {
           ) : (
             <>
               <li className="d-flex flex-column btn-box m5">
-                <NavLink to="/login">
+                <NavLink to="/login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>
                   <button className={`btn btn-primary ${styles.navbtn}`}>
                     CONNEXION
                   </button>
@@ -99,12 +99,12 @@ export default function Header() {
                 <div className="divider"></div>
               </li>
               <li className="d-flex flex-column btn-box m5">
-                <NavLink to="/home-register">
+                <NavLink to="/home-register" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>
                   <button className={`btn btn-primary ${styles.navbtn}`}>
                     INSCRIPTION
                   </button>
-                  <div className="divider"></div>
                 </NavLink>
+                <div className="divider"></div>
               </li>
             </>
           )}

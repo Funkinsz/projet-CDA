@@ -42,6 +42,7 @@ export default function HomeRegister() {
         <Navigate to="/profile" />
       ) : (
         <>
+          <Topbar />
           <div className={`${styles.content} d-flex flex-fill aic jcse`}>
             <NavLink to="/register-perso">
               <div className={`${styles.card} d-flex flex-column aic jcc card`}>

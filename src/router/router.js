@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/newsletter/:title',
                         element: <Newsletter />
-                    }
+                    },
                 ]
             },
             {
@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
                 element: <ArtSearch />
             },
             {
-                path: '/profile',
+                path: '/profile/*',
                 element: (
                     <ProtectedRoute>
                         <Profile />
