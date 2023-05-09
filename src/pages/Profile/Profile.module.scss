@@ -68,14 +68,13 @@
               text-shadow: 0 1px var(--dark-1), -1px 0 var(--dark-1),
                 0 -1px var(--dark-1), 1px 0 var(--dark-1);
               input {
-                width: 20px;
-                height: 20px;
+                width: 25px;
+                height: 25px;
               }
             }
           }
         }
         .surname {
-          // backdrop-filter: blur(5px);
           font-size: 50px;
           color: var(--neon-blue);
           text-shadow: 0 2px var(--dark-1), -2px 0 var(--dark-1),
@@ -85,7 +84,6 @@
           }
         }
         .group_end_icon {
-          // backdrop-filter: blur(5px);
           .i {
             i {
               font-size: 50px;
@@ -93,7 +91,6 @@
               backdrop-filter: brightness(1);
               margin: 10px;
               color: var(--neon-pink);
-              // opacity: 0.33;
               transition: 0.2s;
               &:hover {
                 filter: brightness(2);
@@ -111,6 +108,31 @@
             }
           }
         }
+      }
+    }
+  }
+  .desc {
+    width: 1300px;
+    .desc_list {
+      width: 60%;
+      .group_list {
+        ul {
+          h3 {
+            padding: 5px;
+          }
+          li {
+            list-style: disc;
+          }
+        }
+      }
+    }
+    .placeholder {
+      width: 40%;
+      textarea {
+        width: 100%;
+        height: 120px;
+        border-radius: 15px;
+        padding: 10px;
       }
     }
   }

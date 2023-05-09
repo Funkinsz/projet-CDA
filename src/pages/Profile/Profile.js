@@ -19,8 +19,8 @@ export default function Profile() {
   console.log(user);
   return (
     <section className={`flex-fill d-flex jcc p30`}>
-      <div className={`${styles.profileContainer} d-flex jcc`}>
-        <div className={`${styles.profileHeader} d-flex flex-fill`}>
+      <div className={`${styles.profileContainer} d-flex flex-column`}>
+        <div className={`${styles.profileHeader} d-flex`}>
           <div
             className={`${styles.banner}`}
             style={{
@@ -28,12 +28,14 @@ export default function Profile() {
                 user.banner_user === null
                   ? `url("${banner}")`
                   : user.banner_user,
-            }}>
-            <div className={`${styles.backdrop_filter} d-flex jcsb`}>
+            }}
+          >
+            <div className={`${styles.backdrop_filter} d-flex`}>
               <div className={`${styles.pp} d-flex aic jcc`}>
                 {user.profile_picture === null ? (
                   <div
-                    className={`${styles.group_icon} d-flex flex-column aic jcc`}>
+                    className={`${styles.group_icon} d-flex flex-column aic jcc`}
+                  >
                     <span className={`${styles.default_profile} m30`}>
                       <i className="fa-regular fa-user"></i>
                     </span>
@@ -54,15 +56,13 @@ export default function Profile() {
                 <ul className="d-flex flex-column ais jcc">
                   <li>{user.city.toUpperCase()}</li>
                   <li>{user.travel_time} Km</li>
-                  <li>
+                  <li className="d-flex aic">
                     <label>Singer</label>
-                    {
-                      user.singer === null ? (
-                        <input className="m10" type="checkbox" />
-                      ) : (
-                        <input className="m10" type="checkbox" checked />
-                      )
-                    }
+                    {user.singer === null ? (
+                      <input className="m10" type="checkbox" />
+                    ) : (
+                      <input className="m10" type="checkbox" checked />
+                    )}
                   </li>
                 </ul>
               </div>
@@ -70,7 +70,8 @@ export default function Profile() {
                 <h1>{user.surname}</h1>
               </span>
               <div
-                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}>
+                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}
+              >
                 <span className={`${styles.i}`}>
                   <i className="fa-regular fa-envelope"></i>
                   <i className="fa-solid fa-envelope"></i>
@@ -80,6 +81,47 @@ export default function Profile() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+        <div className={`${styles.desc} d-flex p10`}>
+          <div className={`${styles.desc_list} d-flex jcsa`}>
+            <div className={`${styles.group_list}`}>
+              <ul>
+                <h3>Style :</h3>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+              </ul>
+            </div>
+            <div className={`${styles.group_list}`}>
+              <ul>
+                <h3>Instruments :</h3>
+                <li></li>
+              </ul>
+            </div>
+            <div className={`${styles.group_list}`}>
+              <ul>
+                <h3>Equipement :</h3>
+                <li></li>
+              </ul>
+            </div>
+            <div className={`${styles.group_list}`}>
+              <ul>
+                <h3>Groupes :</h3>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div className={`${styles.placeholder}`}>
+            {user.desc_user === "" ? (
+              <textarea
+                name=""
+                id=""
+                placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"
+              ></textarea>
+            ) : (
+              <p>{user.desc_user}</p>
+            )}
           </div>
         </div>
       </div>
