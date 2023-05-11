@@ -19,9 +19,9 @@ export default function ContentPro() {
 
   function handleChanges(e, newValue) {
     setRange(newValue);
-    if (a > range[1] || a < range[0]) {
-      !setView;
-    }
+    // if (a > range[1] || a < range[0]) {
+    //   !setView;
+    // }
   }
 
   const [view, setView] = useState(true);

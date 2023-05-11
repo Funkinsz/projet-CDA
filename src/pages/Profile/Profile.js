@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
 import { AuthContext } from "../../context/AuthContext";
 import banner from "../../assets/image/banner.jpeg";
@@ -6,7 +6,6 @@ import banner from "../../assets/image/banner.jpeg";
 export default function Profile() {
   const { user } = useContext(AuthContext);
 
-  console.log(user);
   return (
     <section className={`flex-fill d-flex jcc p30`}>
       <div className={`${styles.profileContainer} d-flex flex-column`}>
@@ -18,12 +17,14 @@ export default function Profile() {
                 user.banner_user === null
                   ? `url("${banner}")`
                   : user.banner_user,
-            }}>
+            }}
+          >
             <div className={`${styles.backdrop_filter} d-flex`}>
               <div className={`${styles.pp} d-flex aic jcc`}>
                 {user.profile_picture === null ? (
                   <div
-                    className={`${styles.group_icon} d-flex flex-column aic jcc`}>
+                    className={`${styles.group_icon} d-flex flex-column aic jcc`}
+                  >
                     <span className={`${styles.default_profile} m30`}>
                       <i className="fa-regular fa-user"></i>
                     </span>
@@ -33,7 +34,9 @@ export default function Profile() {
                   </div>
                 ) : (
                   <>
-                    <img src={user.profile_picture} alt="" />
+                    <span className={`${styles.default_profile} m30`}>
+                      {/* <img src={} alt="" /> */}
+                    </span>
                     <span className={`${styles.upload}`}>
                       <i className="fa-solid fa-upload"></i>
                     </span>
@@ -58,7 +61,8 @@ export default function Profile() {
                 <h1>{user.surname}</h1>
               </span>
               <div
-                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}>
+                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}
+              >
                 <span className={`${styles.i}`}>
                   <i className="fa-regular fa-envelope"></i>
                   <i className="fa-solid fa-envelope"></i>
@@ -101,12 +105,17 @@ export default function Profile() {
           </div>
           <div className={`${styles.placeholder}`}>
             {user.desc_user === "" ? (
-              <textarea
-                name=""
-                id=""
-                placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"></textarea>
+              <>
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"
+                ></textarea>
+              </>
             ) : (
-              <p>{user.desc_user}</p>
+              <>
+                <p>{user.desc_user}</p>
+              </>
             )}
           </div>
         </div>

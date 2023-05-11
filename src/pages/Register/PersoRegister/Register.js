@@ -126,7 +126,7 @@ export default function RegisterPro() {
         clearErrors();
         await createUserPerso(values);
         console.log(values.image[0].name);
-        // navigate("/login");
+        navigate("/login");
       } catch (message) {
         console.error(message);
       }
