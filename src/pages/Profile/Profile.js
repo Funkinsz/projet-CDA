@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import styles from "./Profile.module.scss";
 import { AuthContext } from "../../context/AuthContext";
-import pp from "../../assets/image/Img register/pro4.jpeg";
 import banner from "../../assets/image/banner.jpeg";
 
 export default function Profile() {
@@ -19,14 +18,12 @@ export default function Profile() {
                 user.banner_user === null
                   ? `url("${banner}")`
                   : user.banner_user,
-            }}
-          >
+            }}>
             <div className={`${styles.backdrop_filter} d-flex`}>
               <div className={`${styles.pp} d-flex aic jcc`}>
                 {user.profile_picture === null ? (
                   <div
-                    className={`${styles.group_icon} d-flex flex-column aic jcc`}
-                  >
+                    className={`${styles.group_icon} d-flex flex-column aic jcc`}>
                     <span className={`${styles.default_profile} m30`}>
                       <i className="fa-regular fa-user"></i>
                     </span>
@@ -61,8 +58,7 @@ export default function Profile() {
                 <h1>{user.surname}</h1>
               </span>
               <div
-                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}
-              >
+                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}>
                 <span className={`${styles.i}`}>
                   <i className="fa-regular fa-envelope"></i>
                   <i className="fa-solid fa-envelope"></i>
@@ -108,8 +104,7 @@ export default function Profile() {
               <textarea
                 name=""
                 id=""
-                placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"
-              ></textarea>
+                placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"></textarea>
             ) : (
               <p>{user.desc_user}</p>
             )}

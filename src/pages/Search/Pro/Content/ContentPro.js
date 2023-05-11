@@ -1,101 +1,30 @@
-import styles from './ContentPro.module.scss';
-import image from '../../../../assets/image/affiche_concert.jpg'
+import styles from "./ContentPro.module.scss";
+import image from "../../../../assets/image/affiche_concert.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../../../../context/AuthContext";
 
 export default function ContentPro() {
-    return (
-        <section className={`${styles.section} section d-flex`}>
-            <div className={`${styles.content} d-flex flex-column aic p10`}>
-                <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
-                    <div className={`${styles.img} d-flex jcc aic`}>
-                        <img src={image} alt="" />
-                        <span className={`${styles.price}`}>
-                            PRIX
-                        </span>
-                    </div>
-                    <div className={`d-flex flex-fill flex-column p10`}>
-                        <h2>TITRE</h2>
-                        <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                        </span>
-                    </div>
-                </div>
+  const { ads } = useContext(AuthContext);
 
-                <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
-                    <div className={`${styles.img} d-flex jcc aic`}>
-                        <img src={image} alt="" />
-                        <span className={`${styles.price}`}>
-                            PRIX
-                        </span>
-                    </div>
-                    <div className={`d-flex flex-fill flex-column p10`}>
-                        <h2>TITRE</h2>
-                        <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                        </span>
-                    </div>
-                </div>
+  console.log(ads);
 
-                <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
-                    <div className={`${styles.img} d-flex jcc aic`}>
-                        <img src={image} alt="" />
-                        <span className={`${styles.price}`}>
-                            PRIX
-                        </span>
-                    </div>
-                    <div className={`d-flex flex-fill flex-column p10`}>
-                        <h2>TITRE</h2>
-                        <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                        </span>
-                    </div>
-                </div>
-
-                <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
-                    <div className={`${styles.img} d-flex jcc aic`}>
-                        <img src={image} alt="" />
-                        <span className={`${styles.price}`}>
-                            PRIX
-                        </span>
-                    </div>
-                    <div className={`d-flex flex-fill flex-column p10`}>
-                        <h2>TITRE</h2>
-                        <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                        </span>
-                    </div>
-                </div>
-
-                <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
-                    <div className={`${styles.img} d-flex jcc aic`}>
-                        <img src={image} alt="" />
-                        <span className={`${styles.price}`}>
-                            PRIX
-                        </span>
-                    </div>
-                    <div className={`d-flex flex-fill flex-column p10`}>
-                        <h2>TITRE</h2>
-                        <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, similique.
-                        </span>
-                    </div>
-                </div>
-
+  return (
+    <section className={`${styles.section} section d-flex`}>
+      <div className={`${styles.content} d-flex flex-column aic p10`}>
+        {ads &&
+          ads.map((a, i) => (
+            <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
+              <div className={`${styles.img} d-flex jcc aic`}>
+                <img src={image} alt="" />
+                <span className={`${styles.price}`}>{a.price_ad_pro} €</span>
+              </div>
+              <div className={`d-flex flex-fill flex-column p10`}>
+                <h2>{a.title_ad_pro}</h2>
+                <span>{a.content_ad_pro}</span>
+              </div>
             </div>
-        </section>
-    )
+          ))}
+      </div>
+    </section>
+  );
 }

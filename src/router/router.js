@@ -14,6 +14,9 @@ import { userLoader } from "../Loader/userLoader";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import Profile from "../pages/Profile/Profile";
 import Forget from "../pages/Forget/Forget";
+import { AdsLoader } from "../Loader/Ads/adsOrgaLoader";
+import SidebarPro from "../pages/Search/Pro/Sidebar/SidebarPro";
+import ContentPro from "../pages/Search/Pro/Content/ContentPro";
 
 export const router = createBrowserRouter([
     {
@@ -58,7 +61,18 @@ export const router = createBrowserRouter([
             }, 
             {
                 path: '/pros',
-                element: <ProSearch />
+                element: <ProSearch />,
+                loader: AdsLoader,
+                children: [
+                    {
+                        path: '/pros',
+                        element: <SidebarPro />
+                    },
+                    {
+                        path:'/pros',
+                        element: <ContentPro />
+                    }
+                ]
             },
             {
                 path: '/bands',
