@@ -25,7 +25,6 @@ export async function getCurrentUser() {
   const response = await fetch(`${API_USERS}/current`, {
     credentials: "include",
   });
-  // const responesFromBackEnd = await response.json()
   return await response.json();
 }
 

@@ -3,18 +3,9 @@ import styles from "./Profile.module.scss";
 import { AuthContext } from "../../context/AuthContext";
 import pp from "../../assets/image/Img register/pro4.jpeg";
 import banner from "../../assets/image/banner.jpeg";
-import { Checkbox } from "@mui/material";
 
 export default function Profile() {
   const { user } = useContext(AuthContext);
-
-  // if (user.banner === null) {
-  //   user.banner = "grey"
-  // }
-
-  // if (user.profile_picture === "") {
-  //   user.profile_picture = "grey"
-  // }
 
   console.log(user);
   return (
