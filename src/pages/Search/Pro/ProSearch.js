@@ -13,7 +13,7 @@ export default function ProSearch() {
       <div className="d-flex flex-fill">
         <section className={`${styles.container} d-flex flex-fill jcc`}>
           <AdsProvider>
-            <SidebarPro />
+            {/* <SidebarPro /> */}
             <ContentPro />
           </AdsProvider>
         </section>

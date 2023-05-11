@@ -42,12 +42,25 @@ export async function createUserPro(newUser) {
 }
 
 export async function createUserPerso(newUser) {
+  console.log(newUser);
+  const thisUser = {
+    surname: newUser.surname,
+    email: newUser.email,
+    password: newUser.password,
+    status: newUser.status,
+    name: newUser.name,
+    firstname: newUser.firstname,
+    city: newUser.city,
+    travel: newUser.travel,
+    image: newUser.image[0].name,
+    date: newUser.date
+  }
   const response = await fetch(`${API_USERS}/addUserPerso`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(newUser),
+    body: JSON.stringify(thisUser),
   });
   const responseFromBackEnd = await response.json();
   if (response.ok) {

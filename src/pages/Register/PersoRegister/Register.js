@@ -26,6 +26,19 @@ export default function RegisterPro() {
   // Vérification du formulaire d'incription par la methode YUP
   const navigate = useNavigate();
 
+  const maxFileSize = 102400;
+
+  const validFileExtensions = {
+    image: ["jpg", "gif", "png", "jpeg", "svg", "webp", "jfif"],
+  };
+
+  function isValidFileType(fileName, fileType) {
+    return (
+      fileName &&
+      validFileExtensions[fileType].indexOf(fileName.split(".")) > -1
+    );
+  }
+
   const validationSchema = yup.object({
     surname: yup
       .string()
@@ -63,15 +76,29 @@ export default function RegisterPro() {
       .min(2, "Au moins 2 caractères"),
   });
 
+  const validationImage = yup.object().shape({
+    image: yup
+      .mixed()
+      .test("is-valid-type", "Not a valid image type", (value) =>
+        isValidFileType(value && value.name.toLowerCase(), "image")
+      )
+      .test(
+        "is-calid-size",
+        "Max allowed size is 100Ko",
+        (value) => value && value.size >= maxFileSize
+      ),
+  });
+
   const initialValues = {
     surname: "",
     email: "",
     password: "",
     status: "",
     name: "",
-    fisrtname: "",
+    firstname: "",
     city: "",
     travel: "",
+    image: "",
   };
 
   const {
@@ -82,7 +109,7 @@ export default function RegisterPro() {
     clearErrors,
   } = useForm({
     initialValues,
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema, validationImage),
   });
 
   const submit = handleSubmit(async (values) => {
@@ -98,7 +125,8 @@ export default function RegisterPro() {
       try {
         clearErrors();
         await createUserPerso(values);
-        navigate("/login");
+        console.log(values.image[0].name);
+        // navigate("/login");
       } catch (message) {
         console.error(message);
       }
@@ -318,6 +346,22 @@ export default function RegisterPro() {
                   />
                   {errors?.travel && (
                     <p className="error">{errors.travel.message}</p>
+                  )}
+                </div>
+
+                <div
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  <label className="m5" name="image" htmlFor="">
+                    Imagine
+                  </label>
+                  <input
+                    className={`${styles.input}`}
+                    type="file"
+                    name="image"
+                    {...register("image")}
+                  />
+                  {errors?.image && (
+                    <p className="error">{errors.image.message}</p>
                   )}
                 </div>
 
