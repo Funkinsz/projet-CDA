@@ -1,6 +1,6 @@
 import styles from "./ContentPro.module.scss";
 import image from "../../../../assets/image/affiche_concert.jpg";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext";
 import Slider from "@mui/material/Slider";
 import style from "./SidebarPro.module.scss";
@@ -15,11 +15,16 @@ export default function ContentPro() {
 
   const [range, setRange] = useState([min, max]);
 
+  console.log(range[1]);
+
   function handleChanges(e, newValue) {
     setRange(newValue);
+    if (a > range[1] || a < range[0]) {
+      !setView;
+    }
   }
 
-  console.log(ads);
+  const [view, setView] = useState(true);
 
   return (
     <section className={`${styles.section} section d-flex`}>
@@ -80,18 +85,24 @@ export default function ContentPro() {
 
       <div className={`${styles.content} d-flex flex-column aic p10`}>
         {ads &&
-          ads.map((a, i) => (
-            <div className={`${styles.groupcontent} groupcontent d-flex m20`}>
-              <div className={`${styles.img} d-flex jcc aic`}>
-                <img src={image} alt="" />
-                <span className={`${styles.price}`}>{a.price_ad_pro} €</span>
-              </div>
-              <div className={`d-flex flex-fill flex-column p10`}>
-                <h2>{a.title_ad_pro}</h2>
-                <span>{a.content_ad_pro}</span>
-              </div>
-            </div>
-          ))}
+          ads.map(
+            (a, i) =>
+              view && (
+                <div
+                  className={`${styles.groupcontent} groupcontent d-flex m20`}>
+                  <div className={`${styles.img} d-flex jcc aic`}>
+                    <img src={image} alt="" />
+                    <span className={`${styles.price}`}>
+                      {a.price_ad_pro} €
+                    </span>
+                  </div>
+                  <div className={`d-flex flex-fill flex-column p10`}>
+                    <h2>{a.title_ad_pro}</h2>
+                    <span>{a.content_ad_pro}</span>
+                  </div>
+                </div>
+              )
+          )}
       </div>
     </section>
   );

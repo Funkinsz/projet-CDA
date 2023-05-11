@@ -14,7 +14,7 @@ export async function verifyUser(newUser) {
     if (responseFromBackEnd === "user exist") {
       return responseFromBackEnd;
     } else {
-      throw new Error ("User is Null")
+      throw new Error("User is Null");
     }
   } catch (error) {
     throw error;
@@ -53,8 +53,8 @@ export async function createUserPerso(newUser) {
     city: newUser.city,
     travel: newUser.travel,
     image: newUser.image[0].name,
-    date: newUser.date
-  }
+    date: newUser.date,
+  };
   const response = await fetch(`${API_USERS}/addUserPerso`, {
     method: "POST",
     headers: {
@@ -64,6 +64,19 @@ export async function createUserPerso(newUser) {
   });
   const responseFromBackEnd = await response.json();
   if (response.ok) {
+    if (thisUser.image != null) {
+      const response = await fetch(`${API_USERS}/upload`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser.image),
+      });
+      const responseUpload = await response.json();
+      // return responseUpload
+    } else {
+      throw new Error("oopsie");
+    }
     return responseFromBackEnd;
   } else {
     if (responseFromBackEnd) {
