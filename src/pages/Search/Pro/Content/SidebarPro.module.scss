@@ -1,31 +1,31 @@
 .sidebar {
-    width: 300px;
-    position: sticky;
-    top: 100px;
-    z-index: 1;
-    .rangeslider {
-        padding: 0 5px;
-        .slider {
-            width: 80%;
-        }
+  width: 300px;
+  position: sticky;
+  top: 100px;
+  z-index: 1;
+  .rangeslider {
+    padding: 0 5px;
+    .slider {
+      width: 80%;
     }
-    .filter {
-        width: 100%;
-        span {
-            max-width: 100%;
-            select {
-                width: 30px;
-                height: 30px;
-                border-radius: 5px;
-                margin-left: 10px;
-                option {
-                    width: 100%;
-                }
-            }
-            input[type=checkbox] {
-                width: 18px;
-                height: 18px;
-            }
+  }
+  .filter {
+    width: 100%;
+    span {
+      max-width: 100%;
+      select {
+        min-width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        margin-left: 10px;
+        option {
+          width: 100%;
         }
+      }
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+      }
     }
+  }
 }

@@ -175,7 +175,7 @@ export default function RegisterPro() {
                 <input
                   type="hidden"
                   name="status"
-                  value="pro"
+                  value="perso"
                   {...register("status", {
                     required: {
                       value: true,

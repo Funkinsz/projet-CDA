@@ -10,7 +10,7 @@
   height: 220px;
   &:hover {
     cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.02);
     transition: 0.2s;
   }
   .img {
@@ -28,5 +28,24 @@
       text-shadow: 2px 0 #111, -2px 0 #111, 0 2px #111, 0 -2px #111,
       1px 1px #111, -1px -1px #111, 1px -1px #111, -1px 1px #111;
     }
+  }
+  .desc {
+    width: 640px;
+    h2 {
+      padding: 10px 0;
+    }
+  }
+  .divider {
+    height: 90%;
+    width: 1px;
+    margin: 5px;
+    background-color: var(--neon-pink);
+    box-shadow: 0 0 5px 1px var(--neon-pink);
+    border-radius: 25px;
+    filter: brightness(1.5);
+  }
+  .sono {
+    width: 120px;
+    padding: 10px;
   }
 }
