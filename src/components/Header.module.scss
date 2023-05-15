@@ -1,16 +1,40 @@
 i {
-    color: var(--light-2);
+  color: var(--light-2);
 }
 
 .navbtn {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .logo {
-    width: 110px;
-    height: auto;
+  width: 110px;
+  height: auto;
 }
 
 .input {
-    height: 35px;
+  height: 35px;
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .navbtn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 717px) {
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 15px;
+  }
 }

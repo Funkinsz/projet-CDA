@@ -6,7 +6,7 @@ export default function Topbar() {
         <div className={`${styles.topbar} d-flex`}>
             <div className={`${styles.topbarbtn} d-flex aic jcc`}>
                 <NavLink to = "/pros">
-                    <h3>Organisme recherche groupe / JD</h3>
+                    <h3>Organisme recherche groupe / DJ</h3>
                 </NavLink>
             </div>
 

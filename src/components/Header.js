@@ -41,8 +41,7 @@ export default function Header() {
   return (
     <header
       className={`d-flex jcsb ${theme}`}
-      style={{ top: visible ? "0" : "-131px" }}
-    >
+      style={{ top: visible ? "0" : "-131px" }}>
       <div className={`mr20 ${styles.index}`}>
         <NavLink to="/">
           {theme === "dark" ? (
@@ -52,7 +51,7 @@ export default function Header() {
           )}
         </NavLink>
       </div>
-      <div className={`d-flex m10 flex-fill aic jce mr20 search_bar index`}>
+      <div className={`d-flex m10 flex-fill aic jce mr20 search_bar`}>
         <div className={`${styles.input} search d-flex`}>
           <span className="d-flex aic">
             <i className="fa-solid fa-magnifying-glass"></i>
@@ -67,7 +66,10 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="d-flex aic ml20 index">
+      <nav className={`${styles.burger}`}>
+        <i className="fa-solid fa-bars"></i>
+      </nav>
+      <nav className={`${styles.nav} d-flex aic ml20`}>
         <ul className="d-flex flex-row">
           {user ? (
             <>
@@ -91,7 +93,11 @@ export default function Header() {
           ) : (
             <>
               <li className="d-flex flex-column btn-box m5">
-                <NavLink to="/login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>
+                <NavLink
+                  to="/login"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }>
                   <button className={`btn btn-primary ${styles.navbtn}`}>
                     CONNEXION
                   </button>
@@ -99,7 +105,11 @@ export default function Header() {
                 <div className="divider"></div>
               </li>
               <li className="d-flex flex-column btn-box m5">
-                <NavLink to="/home-register" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>
+                <NavLink
+                  to="/home-register"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }>
                   <button className={`btn btn-primary ${styles.navbtn}`}>
                     INSCRIPTION
                   </button>

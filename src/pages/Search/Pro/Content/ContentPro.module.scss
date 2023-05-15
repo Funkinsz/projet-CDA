@@ -1,5 +1,6 @@
 .content {
-  width: 1000px;
+  max-width: 1000px;
+  min-height: 100vh;
 }
 
 .groupcontent {
@@ -14,11 +15,10 @@
     transition: 0.2s;
   }
   .img {
-    min-width: 218px;
     width: 218px;
+    height: 218px;
+    overflow: hidden;
     img {
-      height: 100%;
-      width: auto;
       filter: blur(1px);
     }
     span {
@@ -26,11 +26,11 @@
       font-size: 40px;
       color: var(--light-1);
       text-shadow: 2px 0 #111, -2px 0 #111, 0 2px #111, 0 -2px #111,
-      1px 1px #111, -1px -1px #111, 1px -1px #111, -1px 1px #111;
+        1px 1px #111, -1px -1px #111, 1px -1px #111, -1px 1px #111;
     }
   }
   .desc {
-    width: 640px;
+    width: 70%;
     h2 {
       padding: 10px 0;
     }
@@ -45,7 +45,37 @@
     filter: brightness(1.5);
   }
   .sono {
-    width: 120px;
+    width: 13%;
     padding: 10px;
+  }
+}
+
+@media (max-width: 717px) {
+  .groupcontent {
+    margin: 15px 0;
+    height: 280px;
+  }
+
+  .divider {
+    min-height: 1px;
+    min-width: 90%;
+  }
+
+  .img {
+    max-height: 120px;
+    max-width: 120px;
+  }
+
+  .sono {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
   }
 }

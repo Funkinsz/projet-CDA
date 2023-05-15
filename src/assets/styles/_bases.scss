@@ -251,3 +251,9 @@ footer {
   background: black;
   color: white;
 }
+
+@media (max-width: 717px) {
+  h3 {
+    font-size: 12px;
+  }
+}

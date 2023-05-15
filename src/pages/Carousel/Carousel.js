@@ -6,7 +6,7 @@ export default function Carousel() {
     <div className={`${styles.carousel} d-flex jcc`}>
       <div className={`${styles.left} d-flex`}>
         <button className={`${styles.right}`}>
-          <i class="fa-solid fa-chevron-up"></i>
+          <i className="fa-solid fa-chevron-up"></i>
         </button>
       </div>
       <div className={`${styles.imgcar} d-flex flex-fill aic jcc`}>
@@ -14,7 +14,7 @@ export default function Carousel() {
       </div>
       <div className={`${styles.right} d-flex`}>
         <button className={`${styles.right}`}>
-          <i class="fa-solid fa-chevron-up"></i>
+          <i className="fa-solid fa-chevron-up"></i>
         </button>
       </div>
     </div>

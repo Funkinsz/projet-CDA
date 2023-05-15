@@ -64,10 +64,10 @@ export const router = createBrowserRouter([
                 element: <ProSearch />,
                 loader: AdsLoader,
                 children: [
-                    {
-                        path: '/pros',
-                        element: <SidebarPro />
-                    },
+                    // {
+                    //     path: '/pros',
+                    //     element: <SidebarPro />
+                    // },
                     {
                         path:'/pros',
                         element: <ContentPro />

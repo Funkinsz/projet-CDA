@@ -42,11 +42,28 @@ export default function ContentPro() {
     setNumberArt(e.target.value); // Récupère la valeure selectionné dans le select lié au nombre d'artiste
   }
 
-  console.log(numberArt);
+  const mobileWidth = window.innerWidth < 718; // calcul la largeur de l'écran
+
+  const [burger, setBurger] = useState("none");
+
+  // switch le filtre de display none a flex
+  function toggleBurger() {
+    if (burger === "none") {
+      setBurger("flex");
+    } else {
+      setBurger("none");
+    }
+  }
+
   return (
     <section className={`${styles.section} section d-flex`}>
       <div className={`${style.absolute}`}>
-        <div className={`${style.sidebar} sidebar d-flex flex-column aie p10`}>
+        <span onClick={toggleBurger} className={`${style.burger}`}>
+          <i className="fas fa-sliders"></i>
+        </span>
+        <div
+          style={{ display: mobileWidth ? burger : "" }}
+          className={`${style.sidebar} sidebar d-flex flex-column aie m10`}>
           <div className={`${style.filter} filter search_bar d-flex p20 jce`}>
             <div className="search d-flex">
               <span className="d-flex aic">
@@ -74,7 +91,7 @@ export default function ContentPro() {
               <input onChange={handleSono} type="checkbox" />
             </span>
           </div>
-          <div className={`${style.filter} p20`}>
+          <div className={`${style.filters} p20`}>
             <span className="d-flex jce">
               Prix de {range[0]} à {range[1]} €
             </span>
@@ -93,14 +110,14 @@ export default function ContentPro() {
             <span className="d-flex jce aic">
               Maximum de personne :
               <select onChange={handleNumber} className="p5">
-                {sort && sort.map((a) => <option>{a}</option>)}
+                {sort && sort.map((a, i) => <option>{a}</option>)}
               </select>
             </span>
           </div>
         </div>
       </div>
 
-      <div className={`${styles.content} d-flex flex-column aic p10`}>
+      <div className={`${styles.content} d-flex flex-column aic m10`}>
         {ads &&
           ads.map(
             (a, i) =>
@@ -111,20 +128,36 @@ export default function ContentPro() {
               a.number_art <= numberArt && (
                 <div
                   className={`${styles.groupcontent} groupcontent d-flex jcsb m20`}>
-                  <div className={`${styles.img} d-flex jcc aic`}>
-                    <img src={image} alt="" />
-                    <span className={`${styles.price}`}>
-                      {a.price_ad_pro} €
-                    </span>
+                  <div>
+                    <div className={`${styles.img} d-flex jcc aic`}>
+                      <img src={image} alt="" />
+                      <span className={`${styles.price}`}>
+                        {a.price_ad_pro} €
+                      </span>
+                    </div>
+                    <div className="d-flex aic jcc">
+                      <span className={`${styles.divider}`}></span>
+                    </div>
+                    <ul 
+                    style={{ display: mobileWidth ? "" : "none" }}
+                    className={`${styles.sono} d-flex flex-column jce`}>
+                      <li>musicien : {a.number_art}</li>
+                      <li>{a.sono == true ? "Sono : ✔️" : "Sono : ❌"}</li>
+                    </ul>
                   </div>
+
                   <div className={`${styles.desc} d-flex flex-column p10`}>
                     <h2>{a.title_ad_pro}</h2>
                     <span>{a.content_ad_pro}</span>
                   </div>
-                  <div className="d-flex aic jcc">
+                  <div
+                    style={{ display: mobileWidth ? "none" : "" }}
+                    className="d-flex aic jcc">
                     <span className={`${styles.divider}`}></span>
                   </div>
-                  <ul className={`${styles.sono} d-flex flex-column jce`}>
+                  <ul
+                    style={{ display: mobileWidth ? "none" : "" }}
+                    className={`${styles.sono} d-flex flex-column jce`}>
                     <li>musicien : {a.number_art}</li>
                     <li>{a.sono == true ? "Sono : ✔️" : "Sono : ❌"}</li>
                   </ul>

@@ -1,5 +1,8 @@
+.burger {
+  display: none;
+}
 .sidebar {
-  width: 300px;
+  width: 280px;
   position: sticky;
   top: 100px;
   z-index: 1;
@@ -23,8 +26,96 @@
         }
       }
       input[type="checkbox"] {
-        width: 18px;
+        min-width: 18px;
         height: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .absolute {
+    width: 200px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    .sidebar {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      .filter {
+        padding: 15px 5px;
+        span {
+          select {
+            width: 50px;
+          }
+        }
+      }
+      .filters {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .rangeslider {
+          padding: 0 5px;
+          .slider {
+            width: 90%;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 717px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .absolute {
+      width: 95%;
+      .burger {
+        margin: 10px 0;
+        width: 100%;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--light-1);
+        border-radius: 10px;
+        i {
+          font-size: 25px;
+          padding: 5px;
+        }
+      }
+      .sidebar {
+        margin: 10px 0;
+        width: 100%;
+        .filter {
+          margin: 10px;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--light-1);
+          border-radius: 10px;
+          div {
+            width: 100%;
+            span {
+              width: 30px;
+            }
+          }
+          span {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          }
+        }
       }
     }
   }
