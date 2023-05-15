@@ -128,7 +128,7 @@ export default function RegisterPro() {
               <div
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
-                  visibility: isHidden === false ? "visible" : "hidden",
+                  display: isHidden === false ? "flex" : "none",
                 }}
               >
                 <div
@@ -282,7 +282,7 @@ export default function RegisterPro() {
               <div
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
-                  visibility: isHidden === true ? "visible" : "hidden",
+                  display: isHidden === true ? "flex" : "none",
                 }}
               >
                 <div

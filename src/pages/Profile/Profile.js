@@ -8,7 +8,7 @@ export default function Profile() {
   const { user } = useContext(AuthContext);
   
   return (
-    <section className={`flex-fill d-flex jcc p30`}>
+    <section className={`${styles.section} flex-fill d-flex jcc p30`}>
       <div className={`${styles.profileContainer} d-flex flex-column`}>
         <div className={`${styles.profileHeader} d-flex`}>
           <div

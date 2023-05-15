@@ -154,7 +154,7 @@ export default function RegisterPro() {
               <div
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
-                  visibility: isHidden === false ? "visible" : "hidden",
+                  display: isHidden === false ? "flex" : "none",
                 }}>
                 <div
                   className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
@@ -276,7 +276,7 @@ export default function RegisterPro() {
               <div
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
-                  visibility: isHidden === true ? "visible" : "hidden",
+                  display: isHidden === true ? "flex" : "none",
                 }}>
                 <div
                   className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>

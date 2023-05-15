@@ -1,29 +1,54 @@
 .contentform {
-    width: 1330px;
+  width: 1330px;
+  form {
+    border: solid 1px var(--neon-blue);
+    border-radius: 5px;
+    box-shadow: var(--neon-blue) 0 -1px 5px;
+    width: 66%;
+    .groupeform {
+      width: 50%;
+    }
+    a {
+      text-decoration: none;
+      text-decoration: underline;
+      .forget {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .btnform {
+      width: 80%;
+      button {
+        border-radius: 15px;
+        margin: 10px 0;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .contentform {
+    width: 100%;
     form {
-        border: solid 1px var(--neon-blue);
-        border-radius: 5px;
-        box-shadow: var(--neon-blue) 0 -1px 5px;
-        width: 66%;
+        width: 80%;
         .groupeform {
-            width: 50%;
-        }
-        a {
-            text-decoration: none;
-            text-decoration: underline;
-            .forget {
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
-        .btnform {
-            width: 80%;
-            button {
-                border-radius: 15px;
-                margin: 10px 0;
-                transition: 0.2s;
-            }
+            width: 75%;
         }
     }
+  }
+}
+
+@media (max-width: 717px) {
+  .contentform {
+    width: 100%;
+    form {
+        padding: 15px 5px;
+        width: 90%;
+        .groupeform {
+            width: 100%;
+        }
+    }
+  }
 }

@@ -43,7 +43,7 @@ export default function HomeRegister() {
       ) : (
         <>
           <Topbar />
-          <div className={`${styles.content} d-flex flex-fill aic jcse`}>
+          <div className={`${styles.content} d-flex flex-fill aic jcse m20`}>
             <NavLink to="/register-perso">
               <div className={`${styles.card} d-flex flex-column aic jcc card`}>
                 <img src={`${perso[random1]}`} alt="" />
@@ -51,7 +51,7 @@ export default function HomeRegister() {
               </div>
             </NavLink>
             <NavLink to="/register-pro">
-              <div className={`${styles.card} d-flex flex-column aic jcc card`}>
+              <div className={`${styles.card} d-flex flex-column aic jcc card m20`}>
                 <img src={`${pro[random2]}`} alt="" />
                 <h2>ORGANISATEUR</h2>
               </div>
