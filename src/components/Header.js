@@ -38,6 +38,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, setVisible]);
 
+  const [burger, setBurger] = useState(false);
+
+  function toggleBurger() {
+    setBurger(!burger);
+  }
+
   return (
     <header
       className={`d-flex jcsb ${theme}`}
@@ -66,8 +72,63 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className={`${styles.burger}`}>
+      <nav onClick={toggleBurger} className={`${styles.burger}`}>
         <i className="fa-solid fa-bars"></i>
+
+        <ul
+          style={{ display: !burger ? "none" : "flex" }}
+          className={`${styles.myBurger} d-flex flex-row`}>
+          <span onClick={toggleBurger} className={`${styles.cross}`}>
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+          {user ? (
+            <>
+              <li className="d-flex flex-column btn-box m5">
+                <NavLink to={`/profile/${user.surname}`}>
+                  <button className={`btn btn-primary ${styles.navbtn}`}>
+                    {user.surname.toUpperCase()}
+                  </button>
+                </NavLink>
+                <div className="divider"></div>
+              </li>
+              <li className="d-flex flex-column btn-box m5">
+                <NavLink onClick={() => signout()} to="/login">
+                  <button className={`btn btn-primary ${styles.navbtn}`}>
+                    DECONNEXION
+                  </button>
+                </NavLink>
+                <div className="divider"></div>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="d-flex flex-column btn-box m5">
+                <NavLink
+                  to="/login"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }>
+                  <button className={`btn btn-primary ${styles.navbtn}`}>
+                    CONNEXION
+                  </button>
+                </NavLink>
+                <div className="divider"></div>
+              </li>
+              <li className="d-flex flex-column btn-box m5">
+                <NavLink
+                  to="/home-register"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }>
+                  <button className={`btn btn-primary ${styles.navbtn}`}>
+                    INSCRIPTION
+                  </button>
+                </NavLink>
+                <div className="divider"></div>
+              </li>
+            </>
+          )}
+        </ul>
       </nav>
       <nav className={`${styles.nav} d-flex aic ml20`}>
         <ul className="d-flex flex-row">

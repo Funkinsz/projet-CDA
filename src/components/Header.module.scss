@@ -28,6 +28,7 @@ i {
 @media (max-width: 717px) {
   .nav {
     display: none;
+    transition: 0.5s;
   }
 
   .burger {
@@ -36,5 +37,25 @@ i {
     justify-content: center;
     font-size: 30px;
     margin: 15px;
+  }
+
+  .myBurger {
+    position: absolute;
+    transition: 0.5s;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-2);
+    .cross {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 15px;
+    }
   }
 }
