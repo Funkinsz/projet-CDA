@@ -112,6 +112,20 @@ export default function RegisterPro() {
     resolver: yupResolver(validationSchema, validationImage),
   });
 
+  const convertBlobToBase64 = (blob) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(blob);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+        console.log(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
   const submit = handleSubmit(async (values) => {
     try {
       clearErrors();
@@ -123,10 +137,20 @@ export default function RegisterPro() {
     } catch (error) {
       clearErrors();
       try {
-        clearErrors();
-        await createUserPerso(values);
-        console.log(values.image[0].name);
-        navigate("/login");
+        const fileReader = new FileReader();
+        console.log(values);
+        fileReader.readAsArrayBuffer(values.image[0]);
+        fileReader.onload = async () => {
+          const buffer = fileReader.result;
+          const blob = new Blob([buffer], {
+            type: values.image[0].type,
+          });
+          const base64 = await convertBlobToBase64(blob);
+          values.image = base64;
+          console.log(base64);
+        };
+        // await createUserPerso(values);
+        // navigate("/login");
       } catch (message) {
         console.error(message);
       }

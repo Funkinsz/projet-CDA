@@ -1,5 +1,6 @@
 .profileContainer {
   width: 1300px;
+  // min-width: 1024px;
   background-color: var(--dark-1);
   .profileHeader {
     height: 300px;
@@ -112,7 +113,7 @@
     }
   }
   .desc {
-    width: 1300px;
+    width: 100%;
     .desc_list {
       width: 60%;
       .group_list {

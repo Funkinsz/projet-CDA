@@ -79,7 +79,7 @@ export default function Header() {
           style={{ display: !burger ? "none" : "flex" }}
           className={`${styles.myBurger} d-flex flex-row`}>
           <span onClick={toggleBurger} className={`${styles.cross}`}>
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </span>
           {user ? (
             <>
