@@ -149,8 +149,8 @@ export default function RegisterPro() {
           values.image = base64;
           console.log(base64);
         };
-        // await createUserPerso(values);
-        // navigate("/login");
+        await createUserPerso(values);
+        navigate("/login");
       } catch (message) {
         console.error(message);
       }

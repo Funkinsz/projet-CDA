@@ -6,7 +6,27 @@ import { readUser } from "../../apis/user";
 
 export default function Profile() {
   const { user } = useContext(AuthContext);
+
+  const [ previewImage, setPreviewImage ] = useState("")
+
+  const uint8Array = new Uint8Array(user.profile_picture.data);
+  console.log(uint8Array);
+
+  const blob = new Blob([uint8Array]);
+  console.log(blob);
   
+  const urlImage = URL.createObjectURL(blob);
+  console.log(urlImage);
+  
+  fetch(urlImage)
+    .then((response) => response.text())
+    .then((text) => {
+      console.log(text);
+      setPreviewImage(text);
+    })
+    .catch((error) => console.log(error));
+  
+  console.log(user.profile_picture.data);
   return (
     <section className={`${styles.section} flex-fill d-flex jcc p30`}>
       <div className={`${styles.profileContainer} d-flex flex-column`}>
@@ -34,7 +54,7 @@ export default function Profile() {
                 ) : (
                   <>
                     <span className={`${styles.default_profile} m30`}>
-                      {/* <img src={} alt="" /> */}
+                      <img src={previewImage} alt="" />
                     </span>
                     <span className={`${styles.upload}`}>
                       <i className="fa-solid fa-upload"></i>
