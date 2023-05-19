@@ -137,18 +137,19 @@ export default function RegisterPro() {
     } catch (error) {
       clearErrors();
       try {
-        const fileReader = new FileReader();
-        console.log(values);
-        fileReader.readAsArrayBuffer(values.image[0]);
-        fileReader.onload = async () => {
-          const buffer = fileReader.result;
-          const blob = new Blob([buffer], {
-            type: values.image[0].type,
-          });
-          const base64 = await convertBlobToBase64(blob);
-          values.image = base64;
-          console.log(base64);
-        };
+        // const fileReader = new FileReader();
+        const file = values.image[0];
+        console.log(values.image[0]);
+        // fileReader.readAsArrayBuffer(values.image[0]);
+        // fileReader.onload = async () => {
+        //   const buffer = fileReader.result;
+        //   const blob = new Blob([buffer], {
+        //     type: values.image[0].type,
+        //   });
+        const base64 = await convertBlobToBase64(file);
+        values.image = base64;
+        console.log(base64);
+        // };
         await createUserPerso(values);
         navigate("/login");
       } catch (message) {
@@ -164,7 +165,8 @@ export default function RegisterPro() {
       ) : (
         <div className={`${styles.log} log d-flex flex-fill flex-column aic`}>
           <div
-            className={`${styles.contentform} contentform d-flex flex-column aic jcc`}>
+            className={`${styles.contentform} contentform d-flex flex-column aic jcc`}
+          >
             <div className={`${styles.title} title d-flex flex-column aic m10`}>
               <h1 className={`${styles.titre} m5`}>INSCRIPTION</h1>
               <NavLink to="/register-pro">
@@ -174,14 +176,17 @@ export default function RegisterPro() {
 
             <form
               onSubmit={submit}
-              className={`${styles.form} d-flex flex-column aic m5 p5`}>
+              className={`${styles.form} d-flex flex-column aic m5 p5`}
+            >
               <div
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
                   display: isHidden === false ? "flex" : "none",
-                }}>
+                }}
+              >
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="surname" htmlFor="">
                     Nom de scène
                   </label>
@@ -208,7 +213,8 @@ export default function RegisterPro() {
                 />
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="email" htmlFor="">
                     Adresse e-mail
                   </label>
@@ -224,7 +230,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="password" htmlFor="">
                     Mot de passe
                   </label>
@@ -248,7 +255,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="confirmPSWD" htmlFor="">
                     Confirmation du mot de passe
                   </label>
@@ -272,7 +280,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="date" htmlFor="">
                     Date de naissance
                   </label>
@@ -291,7 +300,8 @@ export default function RegisterPro() {
                   <button
                     onClick={toggleHidden}
                     type="button"
-                    className="btn btn-primary">
+                    className="btn btn-primary"
+                  >
                     SUIVANT
                   </button>
                 </div>
@@ -301,9 +311,11 @@ export default function RegisterPro() {
                 className={`${styles.block} d-flex flex-column flex-fill aic jcc`}
                 style={{
                   display: isHidden === true ? "flex" : "none",
-                }}>
+                }}
+              >
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="name" htmlFor="">
                     Nom
                   </label>
@@ -326,7 +338,8 @@ export default function RegisterPro() {
                 />
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="firstname" htmlFor="">
                     Prenom
                   </label>
@@ -342,7 +355,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="city" htmlFor="">
                     Ville
                   </label>
@@ -358,7 +372,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="travel" htmlFor="">
                     Disponibilité en Km
                   </label>
@@ -374,7 +389,8 @@ export default function RegisterPro() {
                 </div>
 
                 <div
-                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}>
+                  className={`${styles.groupeform} groupeform d-flex flex-column m5 p10`}
+                >
                   <label className="m5" name="image" htmlFor="">
                     Imagine
                   </label>
@@ -397,7 +413,8 @@ export default function RegisterPro() {
                   <button
                     onClick={toggleHidden}
                     type="button"
-                    className="btn btn-primary">
+                    className="btn btn-primary"
+                  >
                     PRECEDENT
                   </button>
                   <button disabled={isSubmitting} className="btn btn-primary">
