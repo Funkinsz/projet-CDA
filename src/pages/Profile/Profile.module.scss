@@ -1,6 +1,17 @@
 .profileContainer {
+  button {
+    height: 75px;
+    border-radius: 15px;
+    background-color: var(--dark-2);
+    color: var(--light-1);
+    overflow: hidden;
+    border: 2px solid var(--light-2);
+    &:hover {
+      filter: brightness(2);
+      cursor: pointer;
+    }
+  }
   width: 1300px;
-  // min-width: 1024px;
   background-color: var(--dark-1);
   .profileHeader {
     height: 300px;
@@ -45,6 +56,9 @@
               height: 100%;
             }
             .default_profile {
+              padding: 30px;
+              width: auto;
+              height: 100%;
               i {
                 font-size: 100px;
               }

@@ -2,32 +2,31 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
 import { AuthContext } from "../../context/AuthContext";
 import banner from "../../assets/image/banner.jpeg";
-import { readUser } from "../../apis/user";
 
 export default function Profile() {
   const { user } = useContext(AuthContext);
-  console.log({ user });
 
   const [previewImage, setPreviewImage] = useState("");
 
-  const uint8Array = new Uint8Array(user.profile_picture.data);
-  // console.log(uint8Array);
+  if (user.profile_picture) {
+    const uint8Array = new Uint8Array(user.profile_picture.data);
+    // console.log(uint8Array);
 
-  const blob = new Blob([uint8Array]);
-  // console.log(blob);
+    const blob = new Blob([uint8Array]);
+    // console.log(blob);
 
-  const urlImage = URL.createObjectURL(blob);
-  // console.log(urlImage);
+    const urlImage = URL.createObjectURL(blob);
+    // console.log(urlImage);
 
-  fetch(urlImage)
-    .then((response) => response.text())
-    .then((text) => {
-      console.log(JSON.stringify(text));
-      setPreviewImage(text);
-    })
-    .catch((error) => console.log(error));
+    fetch(urlImage)
+      .then((response) => response.text())
+      .then((text) => {
+        console.log(JSON.stringify(text));
+        setPreviewImage(text);
+      })
+      .catch((error) => console.log(error));
+  }
 
-  // console.log(user.profile_picture.data);
   return (
     <section className={`${styles.section} flex-fill d-flex jcc p30`}>
       <div className={`${styles.profileContainer} d-flex flex-column`}>
@@ -39,14 +38,12 @@ export default function Profile() {
                 user.banner_user === null
                   ? `url("${banner}")`
                   : user.banner_user,
-            }}
-          >
+            }}>
             <div className={`${styles.backdrop_filter} d-flex`}>
               <div className={`${styles.pp} d-flex aic jcc`}>
                 {user.profile_picture === null ? (
                   <div
-                    className={`${styles.group_icon} d-flex flex-column aic jcc`}
-                  >
+                    className={`${styles.group_icon} d-flex flex-column aic jcc`}>
                     <span className={`${styles.default_profile} m30`}>
                       <i className="fa-regular fa-user"></i>
                     </span>
@@ -83,8 +80,7 @@ export default function Profile() {
                 <h1>{user.surname}</h1>
               </span>
               <div
-                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}
-              >
+                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}>
                 <span className={`${styles.i}`}>
                   <i className="fa-regular fa-envelope"></i>
                   <i className="fa-solid fa-envelope"></i>
@@ -131,8 +127,7 @@ export default function Profile() {
                 <textarea
                   name=""
                   id=""
-                  placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"
-                ></textarea>
+                  placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"></textarea>
               </>
             ) : (
               <>

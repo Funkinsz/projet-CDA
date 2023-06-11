@@ -137,19 +137,19 @@ export default function RegisterPro() {
     } catch (error) {
       clearErrors();
       try {
-        // const fileReader = new FileReader();
-        const file = values.image[0];
-        console.log(values.image[0]);
-        // fileReader.readAsArrayBuffer(values.image[0]);
-        // fileReader.onload = async () => {
-        //   const buffer = fileReader.result;
-        //   const blob = new Blob([buffer], {
-        //     type: values.image[0].type,
-        //   });
-        const base64 = await convertBlobToBase64(file);
-        values.image = base64;
-        console.log(base64);
-        // };
+        console.log(values.image.length > 0);
+        if (values.image.length > 0) {
+          console.log("nan")
+
+          const file = values.image[0];
+          console.log(values.image[0]);
+          const base64 = await convertBlobToBase64(file);
+          values.image = base64;
+          console.log(base64);
+        } else {
+          values.image = null
+        }
+        console.log('oé');
         await createUserPerso(values);
         navigate("/login");
       } catch (message) {
