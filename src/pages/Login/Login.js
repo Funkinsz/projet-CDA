@@ -41,17 +41,25 @@ export default function Login() {
       clearErrors();
       await signin(values);
     } catch (error) {
-      setError("generic", {
-        type: "generic",
-        message: "Email ou mot de passe incorrect",
-      });
+      console.log(error);
+      if (error === "ban") {
+        setError("generic", {
+          type: "generic",
+          message: "Vous êtes banni, contactez l'assistance Michael VB",
+        });
+      } else {
+        setError("generic", {
+          type: "generic",
+          message: "Email ou mot de passe incorrect",
+        });
+      }
     }
   });
 
   return (
     <>
       {user ? (
-        <Navigate to="/profile" />
+        <>{/* <Navigate to="/profile" /> */}</>
       ) : (
         <div
           className={`${styles.log} log d-flex flex-fill flex-column jcc aic`}>
@@ -88,7 +96,7 @@ export default function Login() {
               </div>
 
               <div className={`${styles.forget} forget`}>
-                <NavLink to = "/forget">
+                <NavLink to="/forget">
                   <small>Mot de passe oublié</small>
                 </NavLink>
               </div>

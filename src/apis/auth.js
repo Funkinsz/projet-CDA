@@ -11,9 +11,10 @@ export async function signin(credentials) {
 
   if (response.ok) {
     const responseFromBack = await response.json();
-    if (responseFromBack) {
+    if (responseFromBack !== "ban") {
       return responseFromBack;
     } else {
+      console.log(responseFromBack);
       throw responseFromBack;
     }
   } else {
