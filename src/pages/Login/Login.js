@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import styles from "./Login.module.scss";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context";
+import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const { signin, user } = useContext(AuthContext);
@@ -59,7 +60,9 @@ export default function Login() {
   return (
     <>
       {user ? (
-        <>{/* <Navigate to="/profile" /> */}</>
+        <>
+          <Navigate to="/profile" />
+        </>
       ) : (
         <div
           className={`${styles.log} log d-flex flex-fill flex-column jcc aic`}>
