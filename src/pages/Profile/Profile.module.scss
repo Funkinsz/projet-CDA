@@ -1,4 +1,13 @@
 .profileContainer {
+  .divider {
+    width: 100%;
+    height: 2px;
+    border-radius: 3px;
+    margin: 30px 0;
+    background-color: var(--neon-pink);
+    box-shadow: 0 1px 15px var(--neon-pink);
+  }
+
   button {
     height: 75px;
     border-radius: 15px;
@@ -11,6 +20,7 @@
       cursor: pointer;
     }
   }
+
   width: 1300px;
   background-color: var(--dark-1);
   .profileHeader {
@@ -100,6 +110,22 @@
         }
         .group_end_icon {
           .i {
+            a {
+              .btn {
+                width: 75px;
+                height: 75px;
+                transition: 0.09s;
+                border: none;
+                background-color: var(--neon-pink);
+                border: solid 1px var(--dark-2);
+                color: white;
+                // font-weight: bold;
+                &:hover {
+                  transition: 0.09s;
+                  transform: scale(1.02);
+                }
+              }
+            }
             i {
               font-size: 50px;
               text-shadow: 0 0 2px var(--dark-1);
@@ -127,15 +153,17 @@
     }
   }
   .desc {
-    width: 100%;
+    padding: 5px;
     .desc_list {
       width: 60%;
       .group_list {
+        flex: 1;
         ul {
           h3 {
             padding: 5px;
           }
           li {
+            margin: 0 0 0 20px;
             list-style: disc;
           }
         }
@@ -148,6 +176,49 @@
         height: 120px;
         border-radius: 15px;
         padding: 10px;
+      }
+    }
+  }
+  .body_profile {
+    .rate {
+      width: 15%;
+      .ul {
+        ul {
+          li {
+            i {
+              font-size: 24px;
+              color: var(--neon-blue);
+            }
+          }
+        }
+      }
+    }
+    .container_avis {
+      width: 100%;
+      .card {
+        background-color: var(--dark-2);
+        border: 1px solid var(--neon-blue);
+        border-radius: 5px;
+        box-shadow: 0 0 5px var(--neon-blue);
+        .img {
+          height: 200px;
+          width: 200px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
+      }
+      .content {
+        margin: 5px 15px;
+        .ul {
+          i {
+            color: var(--neon-blue);
+            margin: 0 5px;
+          }
+        }
       }
     }
   }

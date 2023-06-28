@@ -6,19 +6,19 @@ export default function Topbar() {
         <div className={`${styles.topbar} d-flex`}>
             <div className={`${styles.topbarbtn} d-flex aic jcc`}>
                 <NavLink to = "/pros">
-                    <h3>Organisme recherche groupe / DJ</h3>
+                    <h3>Organisateurs</h3>
                 </NavLink>
             </div>
 
             <div className={`${styles.topbarbtn} ${styles.mid} d-flex aic jcc`}>
                 <NavLink to = "/bands">
-                    <h3>Groupe recherche orga</h3>
+                    <h3>Groupes</h3>
                 </NavLink>                
             </div>
 
             <div className={`${styles.topbarbtn} d-flex aic jcc`}>
                 <NavLink to = "/arts">
-                    <h3>Musicien recherche groupe</h3>
+                    <h3>Artistes</h3>
                 </NavLink>
             </div>
         </div>

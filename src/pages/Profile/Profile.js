@@ -1,7 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./Profile.module.scss";
 import { AuthContext } from "../../context/AuthContext";
-import banner from "../../assets/image/banner.jpeg";
+import Head from "./pages/Head";
+import Desc from "./pages/Desc";
+import Rate from "./pages/Rate";
+import Avis from "./pages/Avis";
 
 export default function Profile() {
   const { user } = useContext(AuthContext);
@@ -10,13 +13,10 @@ export default function Profile() {
 
   if (user.profile_picture) {
     const uint8Array = new Uint8Array(user.profile_picture.data);
-    // console.log(uint8Array);
 
     const blob = new Blob([uint8Array]);
-    // console.log(blob);
 
     const urlImage = URL.createObjectURL(blob);
-    // console.log(urlImage);
 
     fetch(urlImage)
       .then((response) => response.text())
@@ -30,111 +30,16 @@ export default function Profile() {
   return (
     <section className={`${styles.section} flex-fill d-flex jcc p30`}>
       <div className={`${styles.profileContainer} d-flex flex-column`}>
-        <div className={`${styles.profileHeader} d-flex`}>
-          <div
-            className={`${styles.banner}`}
-            style={{
-              backgroundImage:
-                user.banner_user === null
-                  ? `url("${banner}")`
-                  : user.banner_user,
-            }}>
-            <div className={`${styles.backdrop_filter} d-flex`}>
-              <div className={`${styles.pp} d-flex aic jcc`}>
-                {user.profile_picture === null ? (
-                  <div
-                    className={`${styles.group_icon} d-flex flex-column aic jcc`}>
-                    <span className={`${styles.default_profile} m30`}>
-                      <i className="fa-regular fa-user"></i>
-                    </span>
-                    <span className={`${styles.upload}`}>
-                      <i className="fa-solid fa-upload"></i>
-                    </span>
-                  </div>
-                ) : (
-                  <>
-                    <span className={`${styles.default_profile} m30`}>
-                      <img src={previewImage} alt="" />
-                    </span>
-                    <span className={`${styles.upload}`}>
-                      <i className="fa-solid fa-upload"></i>
-                    </span>
-                  </>
-                )}
-              </div>
-              <div className={`${styles.list} d-flex aic jcc p10`}>
-                <ul className="d-flex flex-column ais jcc">
-                  <li>{user.city.toUpperCase()}</li>
-                  <li>{user.travel_time} Km</li>
-                  <li className="d-flex aic">
-                    <label>Singer</label>
-                    {user.singer === null ? (
-                      <input className="m10" type="checkbox" />
-                    ) : (
-                      <input className="m10" type="checkbox" checked />
-                    )}
-                  </li>
-                </ul>
-              </div>
-              <span className={`${styles.surname} d-flex flex-fill aic jcc`}>
-                <h1>{user.surname}</h1>
-              </span>
-              <div
-                className={`${styles.group_end_icon} d-flex flex-column aie jcsb`}>
-                <span className={`${styles.i}`}>
-                  <i className="fa-regular fa-envelope"></i>
-                  <i className="fa-solid fa-envelope"></i>
-                </span>
-                <span className={`${styles.up}`}>
-                  <i className="fa-solid fa-upload"></i>
-                </span>
-              </div>
-            </div>
-          </div>
+        <Head user={user} previewImage={previewImage} />
+        <Desc user={user} />
+
+        <div className=" d-flex aic jcc m20">
+          <div className={styles.divider}></div>
         </div>
-        <div className={`${styles.desc} d-flex p10`}>
-          <div className={`${styles.desc_list} d-flex jcsa`}>
-            <div className={`${styles.group_list}`}>
-              <ul>
-                <h3>Style :</h3>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-              </ul>
-            </div>
-            <div className={`${styles.group_list}`}>
-              <ul>
-                <h3>Instruments :</h3>
-                <li></li>
-              </ul>
-            </div>
-            <div className={`${styles.group_list}`}>
-              <ul>
-                <h3>Equipement :</h3>
-                <li></li>
-              </ul>
-            </div>
-            <div className={`${styles.group_list}`}>
-              <ul>
-                <h3>Groupes :</h3>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-          <div className={`${styles.placeholder}`}>
-            {user.desc_user === "" ? (
-              <>
-                <textarea
-                  name=""
-                  id=""
-                  placeholder="Commencez par vous présenter si vous souhaitez être vu ;)"></textarea>
-              </>
-            ) : (
-              <>
-                <p>{user.desc_user}</p>
-              </>
-            )}
-          </div>
+
+        <div className={`${styles.body_profile} d-flex flex-fill`}>
+          <Rate />
+          <Avis />
         </div>
       </div>
     </section>
