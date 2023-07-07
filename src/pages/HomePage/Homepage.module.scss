@@ -1,22 +1,83 @@
+.groupCard {
+  width: 1300px;
+}
+
 .groupecontent {
-    max-width: 1250px;
+  max-width: 1300px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: normal;
+  height: 150px;
+}
+
+.btnNav {
+  background-color: var(--dark-2);
+  border: 1px solid var(--light-1);
+  border-radius: 25px;
+  margin: 50px;
+  padding: 15px;
+  a {
+    text-decoration: none;
+    color: var(--light-1);
+    font-size: 24px;
+  }
+  &:hover {
+    border: 1px solid var(--neon-blue);
+    cursor: pointer;
+    a {
+      color: var(--neon-blue);
+    }
+  }
+}
+
+.groupcontent {
+  width: 400px;
+  height: 375px;
+  border-radius: 10px;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+    img {
+      transform: scale(1.2);
+    }
+  }
+  .img {
+    min-width: 225px;
+    width: 100%;
+    height: 285px;
+    overflow: hidden;
+    img {
+      transition: 0.5s;
+      height: 100%;
+      width: auto;
+    }
+    span {
+      position: absolute;
+      font-size: 32px;
+      background-color: #99999920;
+      color: var(--light-1);
+    }
+  }
 }
 
 .exemplecontent {
-    border-radius: 5px;
-    box-shadow: var(--neon-blue) 0px -1px 5px;
-    height: 500px;
-    width: 85%;
-    border: solid var(--neon-blue) 1px;
-    .titles {
-        justify-content: center;
-        border-bottom: 1px solid var(--neon-pink);
-    }
+  border-radius: 5px;
+  box-shadow: var(--neon-blue) 0px -1px 5px;
+  height: 500px;
+  width: 85%;
+  border: solid var(--neon-blue) 1px;
+  .titles {
+    justify-content: center;
+    border-bottom: 1px solid var(--neon-pink);
+  }
 }
 
 .divider {
-    width: 50%;
-    height: 1px;
-    background-color: var(--neon-pink);
-    box-shadow: var(--neon-pink) 0 1px 15px;
+  width: 50%;
+  height: 1px;
+  background-color: var(--neon-pink);
+  box-shadow: var(--neon-pink) 0 1px 15px;
+  margin: 50px 0;
 }

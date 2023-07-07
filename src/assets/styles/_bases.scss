@@ -89,13 +89,13 @@
 
 .dark {
   transition: 0.5s;
-  background-color: var(--dark-1);
+  background-color: var(--dark-2);
   color: var(--light-1);
   .btn {
     color: var(--light-1);
   }
   .content {
-    background-color: var(--dark-1);
+    background-color: var(--dark-2);
     .exemplecontent {
       background-color: var(--dark-2);
     }
@@ -250,6 +250,7 @@ input {
 footer {
   background: black;
   color: white;
+  margin-top: 100px;
 }
 
 @media (max-width: 717px) {

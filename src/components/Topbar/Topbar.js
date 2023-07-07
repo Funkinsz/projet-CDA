@@ -3,7 +3,7 @@ import styles from './Topbar.module.scss'
 
 export default function Topbar() {
     return (
-        <div className={`${styles.topbar} d-flex`}>
+        <div className={`${styles.topbar} d-flex jcsa`}>
             <div className={`${styles.topbarbtn} d-flex aic jcc`}>
                 <NavLink className={"d-flex aic jcc"} to = "/pros">
                     <h3>Organisateurs</h3>

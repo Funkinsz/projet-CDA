@@ -1,4 +1,4 @@
-import Topbar from '../../Topbar/Topbar';
+import Topbar from '../../../components/Topbar/Topbar';
 import styles from './ArtSearch.module.scss';
 import ContentArt from './Content/ContentArt';
 import SidebarArt from './Sidebar/SidebarArt';

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Topbar from "../Topbar/Topbar";
+import Topbar from "../../components/Topbar/Topbar";
 import styles from "./Register.module.scss";
 import { NavLink, Navigate } from "react-router-dom";
 import { AuthContext } from "../../context";
