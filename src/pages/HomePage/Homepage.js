@@ -1,12 +1,10 @@
 import styles from './Homepage.module.scss'
-import Carousel from '../Carousel/Carousel'
 import { NavLink } from 'react-router-dom'
 import Topbar from '../Topbar/Topbar'
 
 export default function Homepage() {
     return (
         <>
-            <Carousel />
             <Topbar />
             <div className={`${styles.content} content d-flex flex-column jcc aic p20`}>
                 <div className={`${styles.groupecontent} d-flex flex-column nowrap flex-fill aic jcc`}>
