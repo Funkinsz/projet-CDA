@@ -63,9 +63,9 @@ export default function ContentPro() {
         </span>
         <div
           style={{ display: mobileWidth ? burger : "" }}
-          className={`${style.sidebar} sidebar d-flex flex-column aie m10`}>
-          <div className={`${style.filter} filter search_bar d-flex p20 jce`}>
-            <div className="search d-flex">
+          className={`${style.sidebar} sidebar d-flex flex-column aie`}>
+          <div className={`${style.filter} filter search_bar d-flex jce`}>
+            <div className={`${style.search} search d-flex`}>
               <span className="d-flex aic">
                 <i className="fa-solid fa-magnifying-glass"></i>
               </span>
@@ -77,7 +77,7 @@ export default function ContentPro() {
               />
             </div>
           </div>
-          <div className={`${style.filter} p20`}>
+          <div className={`${style.filter}`}>
             <span className="d-flex jce aic">
               Style :
               <select className="p5">
@@ -85,13 +85,13 @@ export default function ContentPro() {
               </select>
             </span>
           </div>
-          <div className={`${style.filter} p20`}>
+          <div className={`${style.filter}`}>
             <span className="d-flex jce aic">
               Sono :
               <input onChange={handleSono} type="checkbox" />
             </span>
           </div>
-          <div className={`${style.filters} p20`}>
+          <div className={`${style.filters}`}>
             <span className="d-flex jce">
               Prix de {range[0]} à {range[1]} €
             </span>
@@ -106,7 +106,7 @@ export default function ContentPro() {
               />
             </div>
           </div>
-          <div className={`${style.filter} p20`}>
+          <div className={`${style.filter}`}>
             <span className="d-flex jce aic">
               Maximum de personne :
               <select onChange={handleNumber} className="p5">
@@ -117,7 +117,7 @@ export default function ContentPro() {
         </div>
       </div>
 
-      <div className={`${styles.content} d-flex flex-column aic m10`}>
+      <div className={`${styles.content} d-flex flex-column aic`}>
         {ads &&
           ads.map(
             (a, i) =>
@@ -127,7 +127,7 @@ export default function ContentPro() {
               (sono === 0 || a.sono === sono) &&
               a.number_art <= numberArt && (
                 <div
-                  className={`${styles.groupcontent} groupcontent d-flex jcsb m20`}>
+                  className={`${styles.groupcontent} groupcontent d-flex jcsb`}>
                   <div>
                     <div className={`${styles.img} d-flex jcc aic`}>
                       <img src={image} alt="" />

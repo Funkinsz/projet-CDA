@@ -1,6 +1,7 @@
 .content {
   max-width: 1000px;
   min-height: 100vh;
+  padding: 10px 0 10px 20px;
 }
 
 .groupcontent {
@@ -9,6 +10,7 @@
   border-radius: 10px;
   overflow: hidden;
   height: 220px;
+  margin: 10px 0 30px;
   &:hover {
     cursor: pointer;
     transform: scale(1.02);

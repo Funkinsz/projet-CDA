@@ -1,28 +1,30 @@
-.contentform {
-  width: 1330px;
-  form {
-    border: solid 1px var(--neon-blue);
-    border-radius: 5px;
-    box-shadow: var(--neon-blue) 0 -1px 5px;
-    width: 66%;
-    .groupeform {
-      width: 50%;
-    }
-    a {
-      text-decoration: none;
-      text-decoration: underline;
-      .forget {
-        &:hover {
-          cursor: pointer;
+.log {
+  .contentform {
+    width: 1330px;
+    form {
+      border: solid 1px var(--neon-blue);
+      border-radius: 5px;
+      box-shadow: var(--neon-blue) 0 -1px 5px;
+      width: 66%;
+      .groupeform {
+        width: 50%;
+      }
+      a {
+        text-decoration: none;
+        text-decoration: underline;
+        .forget {
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
-    }
-    .btnform {
-      width: 80%;
-      button {
-        border-radius: 15px;
-        margin: 10px 0;
-        transition: 0.2s;
+      .btnform {
+        width: 80%;
+        button {
+          border-radius: 15px;
+          margin: 10px 0;
+          transition: 0.2s;
+        }
       }
     }
   }
@@ -32,10 +34,10 @@
   .contentform {
     width: 100%;
     form {
-        width: 80%;
-        .groupeform {
-            width: 75%;
-        }
+      width: 80%;
+      .groupeform {
+        width: 75%;
+      }
     }
   }
 }
@@ -44,11 +46,11 @@
   .contentform {
     width: 100%;
     form {
-        padding: 15px 5px;
-        width: 90%;
-        .groupeform {
-            width: 100%;
-        }
+      padding: 15px 5px;
+      width: 90%;
+      .groupeform {
+        width: 100%;
+      }
     }
   }
 }

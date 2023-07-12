@@ -1,34 +1,47 @@
-.burger {
-  display: none;
-}
-.sidebar {
-  width: 280px;
-  position: sticky;
-  top: 100px;
-  z-index: 1;
-  .rangeslider {
-    padding: 0 5px;
-    .slider {
-      width: 80%;
-    }
+.absolute {
+  padding: 10px 0;
+  .burger {
+    display: none;
   }
-  .filter {
-    width: 100%;
-    span {
-      max-width: 100%;
-      select {
-        min-width: 30px;
-        height: 30px;
-        border-radius: 5px;
-        margin-left: 10px;
-        option {
-          width: 100%;
+
+  .sidebar {
+    width: 300px;
+    position: sticky;
+    top: 100px;
+    z-index: 1;
+    .rangeslider {
+      padding: 0 5px;
+      .slider {
+        width: 80%;
+      }
+    }
+    .filter {
+      width: 100%;
+      padding: 10px 0;
+      span {
+        max-width: 100%;
+        font-size: 14px;
+        select {
+          min-width: 30px;
+          height: 30px;
+          border-radius: 5px;
+          margin-left: 10px;
+          option {
+            width: 100%;
+          }
+        }
+        input[type="checkbox"] {
+          min-width: 18px;
+          height: 18px;
         }
       }
-      input[type="checkbox"] {
-        min-width: 18px;
-        height: 18px;
+      .search {
+        width: 300px
       }
+    }
+    .filters {
+      font-size: 14px;
+      padding: 10px 0;
     }
   }
 }
