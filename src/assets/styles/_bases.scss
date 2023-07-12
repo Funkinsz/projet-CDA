@@ -84,7 +84,6 @@
 
 .toggle {
   margin-bottom: 5px;
-  margin-right: 15px;
 }
 
 .dark {
@@ -204,6 +203,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  width: 1300px;
+  max-width: 100%;
+  margin: auto;
 }
 
 input {
