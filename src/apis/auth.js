@@ -11,11 +11,14 @@ export async function signin(credentials) {
 
   if (response.ok) {
     const responseFromBack = await response.json();
-    if (responseFromBack !== "ban") {
-      return responseFromBack;
-    } else {
+    console.log(responseFromBack);
+    if (responseFromBack === "ban") {
+      throw responseFromBack;
+    } else if (responseFromBack === null) {
       console.log(responseFromBack);
       throw responseFromBack;
+    } else {
+      return responseFromBack
     }
   } else {
     throw new Error ("Oops error in signin")
