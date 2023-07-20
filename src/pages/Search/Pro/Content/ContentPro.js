@@ -1,9 +1,9 @@
 import styles from "./ContentPro.module.scss";
-import image from "../../../../assets/image/affiche_concert.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext";
 import Slider from "@mui/material/Slider";
 import style from "./SidebarPro.module.scss";
+import Ads from "./page/Ads";
 
 export default function ContentPro() {
   const { ads } = useContext(AuthContext);
@@ -125,44 +125,7 @@ export default function ContentPro() {
               a.price_ad_pro >= range[0] &&
               a.price_ad_pro <= range[1] &&
               (sono === 0 || a.sono === sono) &&
-              a.number_art <= numberArt && (
-                <div
-                  className={`${styles.groupcontent} groupcontent d-flex jcsb`}>
-                  <div>
-                    <div className={`${styles.img} d-flex jcc aic`}>
-                      <img src={image} alt="" />
-                      <span className={`${styles.price}`}>
-                        {a.price_ad_pro} €
-                      </span>
-                    </div>
-                    <div className="d-flex aic jcc">
-                      <span className={`${styles.divider}`}></span>
-                    </div>
-                    <ul 
-                    style={{ display: mobileWidth ? "" : "none" }}
-                    className={`${styles.sono} d-flex flex-column jce`}>
-                      <li>musicien : {a.number_art}</li>
-                      <li>{a.sono == true ? "Sono : ✔️" : "Sono : ❌"}</li>
-                    </ul>
-                  </div>
-
-                  <div className={`${styles.desc} d-flex flex-column p10`}>
-                    <h2>{a.title_ad_pro}</h2>
-                    <span>{a.content_ad_pro}</span>
-                  </div>
-                  <div
-                    style={{ display: mobileWidth ? "none" : "" }}
-                    className="d-flex aic jcc">
-                    <span className={`${styles.divider}`}></span>
-                  </div>
-                  <ul
-                    style={{ display: mobileWidth ? "none" : "" }}
-                    className={`${styles.sono} d-flex flex-column jce`}>
-                    <li>musicien : {a.number_art}</li>
-                    <li>{a.sono == true ? "Sono : ✔️" : "Sono : ❌"}</li>
-                  </ul>
-                </div>
-              )
+              a.number_art <= numberArt && <Ads ad={a} mobileWidth={mobileWidth} />
           )}
       </div>
     </section>
