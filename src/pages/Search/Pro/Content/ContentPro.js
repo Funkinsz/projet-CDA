@@ -1,12 +1,27 @@
 import styles from "./ContentPro.module.scss";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext";
 import Slider from "@mui/material/Slider";
 import style from "./SidebarPro.module.scss";
 import Ads from "./page/Ads";
+import NotFound from "./page/NotFound";
 
 export default function ContentPro() {
   const { ads } = useContext(AuthContext);
+
+  const [search, setSearch] = useState("");
+  const [filterAds, setFilterAds] = useState(ads);
+
+  function handleInput(e) {
+    const keyboardInput = e.target.value;
+    setSearch(keyboardInput.trim().toLowerCase());
+  }
+
+  useEffect(() => {
+    setFilterAds(
+      ads.filter((a) => a.title_ad_pro.toLowerCase().startsWith(search))
+    );
+  }, [])
 
   const price = ads.map((a) => a.price_ad_pro); // On définit un tableau des prix des annonce
 
@@ -55,6 +70,7 @@ export default function ContentPro() {
     }
   }
 
+  console.log(ads);
   return (
     <section className={`${styles.section} section d-flex`}>
       <div className={`${style.absolute}`}>
@@ -74,6 +90,7 @@ export default function ContentPro() {
                 name="filter"
                 id="filter"
                 placeholder="Filtre"
+                onInput={handleInput}
               />
             </div>
           </div>
@@ -118,15 +135,20 @@ export default function ContentPro() {
       </div>
 
       <div className={`${styles.content} d-flex flex-column aic`}>
-        {ads &&
-          ads.map(
+        {ads && filterAds.length === 0 ? (
+          <NotFound />
+        ) : (
+          filterAds.map(
             (a, i) =>
               // on créé des condition en lien avec les filtres précédent pour rendre le contenu dynamique
               a.price_ad_pro >= range[0] &&
               a.price_ad_pro <= range[1] &&
               (sono === 0 || a.sono === sono) &&
-              a.number_art <= numberArt && <Ads ad={a} mobileWidth={mobileWidth} />
-          )}
+              a.number_art <= numberArt && (
+                <Ads key={i} ad={a} mobileWidth={mobileWidth} />
+              )
+          )
+        )}
       </div>
     </section>
   );

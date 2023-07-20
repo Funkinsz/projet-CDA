@@ -2,7 +2,6 @@ import styles from "../ContentPro.module.scss";
 import image from "../../../../../assets/image/affiche_concert.jpg";
 
 export default function Ads({ ad, mobileWidth }) {
-    console.log(ad);
   return (
     <div className={`${styles.groupcontent} groupcontent d-flex jcsb`}>
       <div>
