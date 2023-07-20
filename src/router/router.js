@@ -10,11 +10,10 @@ import HomeRegister from "../pages/Register/HomeRegister";
 import RegisterPerso from "../pages/Register/PersoRegister/Register";
 import RegisterPro from "../pages/Register/ProRegister/Register";
 import { userLoader } from "../Loader/userLoader";
+import { AdsLoader } from "../Loader/Ads/adsOrgaLoader";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import Profile from "../pages/Profile/Profile";
 import Forget from "../pages/Forget/Forget";
-import { AdsLoader } from "../Loader/Ads/adsOrgaLoader";
-import ContentPro from "../pages/Search/Pro/Content/ContentPro";
 import MyBands from "../pages/MyBands/MyBands";
 import MyAdds from "../pages/MyAdds/MyAdds";
 
@@ -53,12 +52,6 @@ export const router = createBrowserRouter([
         path: "/pros",
         element: <ProSearch />,
         loader: AdsLoader,
-        children: [
-          {
-            path: "/pros",
-            element: <ContentPro />,
-          },
-        ],
       },
       {
         path: "/bands",

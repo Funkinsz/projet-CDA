@@ -15,19 +15,25 @@ export default function Desc({ user }) {
         <div className={`${styles.group_list}`}>
           <ul>
             <h3>Instruments :</h3>
-            <li></li>
+            <li>Guitare</li>
+            <li>Percu</li>
+            <li>Clavier</li>
           </ul>
         </div>
         <div className={`${styles.group_list}`}>
           <ul>
             <h3>Equipement :</h3>
-            <li></li>
+            <li>Stratocaster</li>
+            <li>Cajon</li>
+            <li>Korg</li>
           </ul>
         </div>
         <div className={`${styles.group_list}`}>
           <ul>
             <h3>Groupes :</h3>
-            <li></li>
+            <li>Kool n the Grats</li>
+            <li>Babacools</li>
+            <li>Santa clavs</li>
           </ul>
         </div>
       </div>
