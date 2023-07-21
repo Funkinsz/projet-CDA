@@ -58,8 +58,16 @@
   }
   .desc {
     width: 70%;
-    h2 {
-      padding: 10px 0;
+    .head {
+      h2 {
+        height: auto;
+      }
+      h4 {
+        margin: 0;
+      }
+      h5 {
+        color: lightgray;
+      }
     }
   }
   .divider {
