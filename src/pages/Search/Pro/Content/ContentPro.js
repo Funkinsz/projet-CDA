@@ -1,5 +1,5 @@
 import styles from "./ContentPro.module.scss";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext";
 import Slider from "@mui/material/Slider";
 import style from "./SidebarPro.module.scss";
@@ -10,18 +10,11 @@ export default function ContentPro() {
   const { ads } = useContext(AuthContext);
 
   const [search, setSearch] = useState("");
-  const [filterAds, setFilterAds] = useState(ads);
 
   function handleInput(e) {
     const keyboardInput = e.target.value;
     setSearch(keyboardInput.trim().toLowerCase());
   }
-
-  useEffect(() => {
-    setFilterAds(
-      ads.filter((a) => a.title_ad_pro.toLowerCase().startsWith(search))
-    );
-  }, [])
 
   const price = ads.map((a) => a.price_ad_pro); // On définit un tableau des prix des annonce
 
@@ -135,7 +128,7 @@ export default function ContentPro() {
       </div>
 
       <div className={`${styles.content} d-flex flex-column aic`}>
-        {ads && filterAds.length === 0 ? (
+        {/* {ads && filterAds.length === 0 ? (
           <NotFound />
         ) : (
           filterAds.map(
@@ -144,10 +137,32 @@ export default function ContentPro() {
               a.price_ad_pro >= range[0] &&
               a.price_ad_pro <= range[1] &&
               (sono === 0 || a.sono === sono) &&
-              a.number_art <= numberArt && (
+              a.number_art <= numberArt &&
+               (
                 <Ads key={i} ad={a} mobileWidth={mobileWidth} />
               )
           )
+        )} */}
+        {ads.filter(
+          (a) =>
+            a.title_ad_pro.toLowerCase().startsWith(search) &&
+            a.price_ad_pro >= range[0] &&
+            a.price_ad_pro <= range[1] &&
+            (sono === 0 || a.sono === sono) &&
+            a.number_art <= numberArt
+        ).length ? (
+          ads
+            .filter(
+              (a) =>
+                a.title_ad_pro.toLowerCase().startsWith(search) &&
+                a.price_ad_pro >= range[0] &&
+                a.price_ad_pro <= range[1] &&
+                (sono === 0 || a.sono === sono) &&
+                a.number_art <= numberArt
+            )
+            .map((a, i) => <Ads key={i} ad={a} mobileWidth={mobileWidth} />)
+        ) : (
+          <NotFound />
         )}
       </div>
     </section>
