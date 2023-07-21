@@ -4,7 +4,7 @@ import { AuthContext } from "../../../../context/AuthContext";
 import Slider from "@mui/material/Slider";
 import style from "./SidebarPro.module.scss";
 import Ads from "./page/Ads";
-import NotFound from "./page/NotFound";
+import NotFound from "../../../../components/notFound/NotFound";
 
 export default function ContentPro() {
   const { ads } = useContext(AuthContext);

@@ -1,4 +1,4 @@
-import s from "../ContentPro.module.scss";
+import s from "./notFound.module.scss";
 
 export default function NotFound() {
   return (
