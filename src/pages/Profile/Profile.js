@@ -22,7 +22,7 @@ export default function Profile() {
       .then((response) => response.text())
       .then((text) => {
         console.log(JSON.stringify(text));
-        setPreviewImage(text);
+        setPreviewImage(text); // envoie de l'image dans un useState
       })
       .catch((error) => console.log(error));
   }

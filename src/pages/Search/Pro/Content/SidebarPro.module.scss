@@ -10,9 +10,10 @@
     top: 100px;
     z-index: 1;
     .rangeslider {
+      width: 300px;
       padding: 0 5px;
       .slider {
-        width: 80%;
+        width: 100%;
       }
     }
     .filter {
@@ -42,6 +43,22 @@
     .filters {
       font-size: 14px;
       padding: 10px 0;
+    }
+
+    .reset {
+      width: 100%;
+      border-radius: 15px;
+      border: 2px solid white;
+      color: white;
+      background-color: black;
+      margin: auto;
+      margin: 10px 0;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+        color: var(--neon-blue);
+        border: 2px solid var(--neon-blue);
+      }
     }
   }
 }

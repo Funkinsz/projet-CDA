@@ -63,7 +63,14 @@ export default function ContentPro() {
     }
   }
 
-  console.log(ads);
+  // fonction de reset du filter
+  function handleReset() {
+    setSearch("");
+    setRange([min, max]);
+    setSono(0);
+    setNumberArt(maxArt);
+  }
+
   return (
     <section className={`${styles.section} section d-flex`}>
       <div className={`${style.absolute}`}>
@@ -84,6 +91,7 @@ export default function ContentPro() {
                 id="filter"
                 placeholder="Filtre"
                 onInput={handleInput}
+                value={search}
               />
             </div>
           </div>
@@ -91,14 +99,14 @@ export default function ContentPro() {
             <span className="d-flex jce aic">
               Style :
               <select className="p5">
-                <option value=""></option>
+                <option></option>
               </select>
             </span>
           </div>
           <div className={`${style.filter}`}>
             <span className="d-flex jce aic">
               Sono :
-              <input onChange={handleSono} type="checkbox" />
+              <input onChange={handleSono} type="checkbox" checked={sono} />
             </span>
           </div>
           <div className={`${style.filters}`}>
@@ -113,36 +121,29 @@ export default function ContentPro() {
                 defaultValue={[range[0], range[1]]}
                 min={min} // prix mini du contenu
                 max={max} // prix maxi du contenu
+                step={10} // graduation entre chaque valeur
+                valueLabelDisplay="auto"
               />
             </div>
           </div>
           <div className={`${style.filter}`}>
             <span className="d-flex jce aic">
               Maximum de personne :
-              <select onChange={handleNumber} className="p5">
-                {sort && sort.map((a, i) => <option>{a}</option>)}
+              <select onChange={handleNumber} className="p5" value={numberArt}>
+                {sort && sort.map((a, i) => <option key={i}>{a}</option>)}
               </select>
             </span>
           </div>
+
+          <button
+            onClick={() => handleReset()}
+            className={`${style.reset} p10`}>
+            Reset filter
+          </button>
         </div>
       </div>
 
       <div className={`${styles.content} d-flex flex-column aic`}>
-        {/* {ads && filterAds.length === 0 ? (
-          <NotFound />
-        ) : (
-          filterAds.map(
-            (a, i) =>
-              // on créé des condition en lien avec les filtres précédent pour rendre le contenu dynamique
-              a.price_ad_pro >= range[0] &&
-              a.price_ad_pro <= range[1] &&
-              (sono === 0 || a.sono === sono) &&
-              a.number_art <= numberArt &&
-               (
-                <Ads key={i} ad={a} mobileWidth={mobileWidth} />
-              )
-          )
-        )} */}
         {ads.filter(
           (a) =>
             a.title_ad_pro.toLowerCase().startsWith(search) &&
